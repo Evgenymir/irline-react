@@ -8,7 +8,7 @@ import rootReducers from './reducers';
 import App from './App.jsx';
 
 // eslint-disable-next-line no-underscore-dangle
-const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__;
+const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
 
 const store = createStore(
     rootReducers,
