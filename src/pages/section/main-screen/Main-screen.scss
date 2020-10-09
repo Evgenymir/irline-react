@@ -1,0 +1,197 @@
+@import "../../../css/mixins";
+@import "../../../css/variables";
+
+.main-screen {
+    height: 100vh;
+    background: #cecece;
+
+    &__wrap {
+        position: relative;
+        z-index: 1;
+
+        .slick-active {
+            z-index: 2;
+        }
+
+        .slick-slide {
+            &:nth-child(2) {
+                .main-screen__slider-item-title {
+                    &:before {
+                        height: 240px;
+
+                        @include max-width-1600 {
+                            height: 200px;
+                        }
+
+                        @include max-width-1280 {
+                            height: 170px;
+                        }
+
+                        @include max-width-992 {
+                            height: 120px;
+                        }
+
+                        @include max-width-768 {
+                            height: 95px;
+                        }
+
+                        @include max-width-480 {
+                            height: 80px;
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                .main-screen__slider-item-title {
+                    &:before {
+                        height: 330px;
+
+                        @include max-width-1600 {
+                            height: 270px;
+                        }
+
+                        @include max-width-1280 {
+                            height: 230px;
+                        }
+
+                        @include max-width-992 {
+                            height: 160px;
+                        }
+
+                        @include max-width-768 {
+                            height: 130px;
+                        }
+
+                        @include max-width-480 {
+                            height: 110px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__slider-item {
+        height: 100vh;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding-top: 30vh;
+    }
+
+    &__slider-item-title {
+        position: relative;
+        max-width: 600px;
+        height: 330px;
+        font-size: rem(84px);
+        color: #fff;
+        line-height: 1;
+        text-align: left;
+        margin: 0 auto 8vh;
+        padding-left: 45px;
+
+        @include max-width-1600 {
+            max-width: 450px;
+            height: 290px;
+            font-size: 4.25rem;
+        }
+
+        @include max-width-1280 {
+            max-width: 385px;
+            height: 250px;
+        }
+
+        @include max-width-992 {
+            max-width: 260px;
+            height: 175px;
+            font-size: 3rem;
+            padding-left: 15px;
+        }
+
+        @include max-width-768 {
+            max-width: 210px;
+            height: 145px;
+            font-size: 2.5rem;
+            margin-bottom: 5vh;
+        }
+
+        @include max-width-480 {
+            max-width: 185px;
+            height: 115px;
+            font-size: 2rem;
+        }
+
+        &:before {
+            content: "";
+            width: 10px;
+            height: 160px;
+            background-color: $red;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            @include max-width-1600 {
+                height: 130px;
+            }
+
+            @include max-width-1280 {
+                height: 110px;
+            }
+
+            @include max-width-992 {
+                width: 5px;
+                height: 80px;
+            }
+
+            @include max-width-768 {
+                height: 60px;
+                top: 3px;
+            }
+
+            @include max-width-480 {
+                height: 55px;
+                top: 0;
+            }
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    &__control {
+        width: 36px;
+        height: 66px;
+        position: absolute;
+        top: 50%;
+        z-index: 100;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border: none;
+        margin-top: -33px;
+        cursor: pointer;
+
+        &.prev {
+            left: 20px;
+        }
+
+        &.next {
+            right: 20px;
+        }
+
+        @include max-width-992 {
+            width: 25px;
+            height: 40px;
+            margin-top: -20px;
+        }
+
+        @include max-width-768 {
+            width: 20px;
+            height: 35px;
+            margin-top: -17px;
+        }
+    }
+}

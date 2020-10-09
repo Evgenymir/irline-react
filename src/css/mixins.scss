@@ -1,0 +1,130 @@
+// Миксины
+
+@mixin inlineBlock($vAlign: top) {
+	display: inline-block;
+	vertical-align: $vAlign;
+}
+
+@mixin flex($jContent: flex-start) {
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: $jContent;
+}
+
+@mixin bg($bSize: cover) {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: $bSize;
+}
+
+// Убирает базовые стили со списков
+@mixin reset-list() {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+// Убирает браузерные стили у тега button
+
+/* stylelint-disable  property-no-vendor-prefix */
+@mixin reset-button() {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    text-align: inherit;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+
+    /* Remove excess padding and border in Firefox 4+ */
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+}
+
+// Добавляем object-fit для img,
+// font-family нужен для работы полифила.
+@mixin object-fit($property: none, $direction: center) {
+    object-fit: $property;
+    object-position: $direction;
+    font-family: "object-fit: #{$property}; object-position: #{$direction};";
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder           { @content; }
+  &::-moz-placeholder          { @content; }
+  &:-ms-input-placeholder      { @content; }  
+}
+
+// rem ---- em
+
+@function rem($px) {
+	@return $px / 16px +0rem;
+}
+@function em($px) {
+	@return $px / 16px +0em;
+}
+
+//responsive
+
+@mixin max-width-1850 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin max-width-1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin max-width-1500 {
+    @media screen and (max-width: 1500px) {
+        @content;
+    }
+}
+
+@mixin max-width-1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin max-width-1280 {
+    @media screen and (max-width: 1280px) {
+        @content;
+    }
+}
+@mixin max-width-992 {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+@mixin max-width-768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin max-width-480 {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}

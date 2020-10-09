@@ -1,0 +1,303 @@
+@import '../../../css/mixins';
+@import '../../../css/variables';
+
+.stages-cooperation {
+    position: relative;
+    background-color: #fff;
+    padding-top: 117px;
+
+    @include max-width-1280 {
+        padding-top: 80px;
+    }
+
+    @include max-width-992 {
+        padding-top: 50px;
+    }
+
+    @include max-width-768 {
+        padding-top: 20px;
+    }
+
+    &__block {
+        @include flex(center);
+        flex-wrap: wrap;
+        max-width: 1485px;
+        margin: 0 auto;
+
+        @include max-width-480 {
+            text-align: center;
+        }
+    }
+
+    &__block-item {
+        position: relative;
+        width: 33.3%;
+
+        @include max-width-480 {
+            width: 50%;
+        }
+
+        &:nth-child(1) {
+            order: 1;
+        }
+
+        &:nth-child(2) {
+            text-align: center;
+            order: 2;
+
+            .stages-cooperation__block-item-arrow {
+                left: 73%;
+            }
+        }
+
+        &:nth-child(3) {
+            text-align: right;
+            order: 3;
+
+            @include max-width-480 {
+                text-align: center;
+            }
+
+            .stages-cooperation__block-item-arrow {
+                width: 156px;
+                height: 177px;
+                left: auto;
+                right: 31%;
+                top: 98%;
+                margin-top: 0;
+
+                @include max-width-1600 {
+                    right: 30%;
+                }
+
+                @include max-width-1400 {
+                    right: 21%;
+                }
+
+                @include max-width-1280 {
+                    width: 140px;
+                    top: 103%;
+                }
+
+                @media screen and (max-width: 1180px) {
+                    width: 107px;
+                    height: 121px;
+                    right: 25%;
+                    top: 103%;
+                }
+
+                @include max-width-992 {
+                    width: 80px;
+                    height: 90px;
+                    top: 106%;
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            width: 41%;
+            text-align: center;
+            order: 5;
+
+            @include max-width-768 {
+                order: 4;
+            }
+
+            @include max-width-480 {
+                width: 50%;
+            }
+
+            .stages-cooperation__block-item-arrow {
+                width: 61%;
+                left: -29%;
+
+                @include max-width-1600 {
+                    left: -29%;
+                }
+
+                @include max-width-1400 {
+                    left: -25%;
+                }
+            }
+        }
+
+        &:nth-child(5) {
+            width: 41%;
+            text-align: center;
+            order: 4;
+
+            @include max-width-768 {
+                order: 5;
+            }
+
+            @include max-width-480 {
+                width: 50%;
+            }
+
+            .stages-cooperation__block-item-arrow {
+                width: 232px;
+                height: 164px;
+                left: -9%;
+                top: 41%;
+                margin-top: 0;
+
+                @include max-width-1280 {
+                    width: 185px;
+                    top: 43%;
+                }
+
+                @media screen and (max-width: 1180px) {
+                    width: 155px;
+                }
+
+                @include max-width-992 {
+                    width: 107px;
+                    height: 76px;
+                    top: 43%;
+                }
+            }
+        }
+
+        &:nth-child(6) {
+            order: 6;
+
+            .stages-cooperation__block-item-arrow {
+                left: 50%;
+            }
+        }
+
+        &:nth-child(7) {
+            text-align: center;
+            order: 7;
+
+            .stages-cooperation__block-item-arrow {
+                left: 74%;
+            }
+        }
+
+        &:nth-child(8) {
+            text-align: right;
+            order: 8;
+
+            @include max-width-480 {
+                text-align: center;
+            }
+
+            .stages-cooperation__block-item-arrow {
+                display: none;
+            }
+        }
+    }
+
+    &__block-item-arrow {
+        display: block;
+        width: 77%;
+        height: 90px;
+        position: absolute;
+        top:50%;
+        left: 49%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: -45px;
+
+        @include max-width-1280 {
+            height: 65px;
+            margin-top: -34px;
+        }
+
+        @media screen and (max-width: 1180px) {
+            height: 55px;
+            margin-top: -29px;
+        }
+
+        @include max-width-992 {
+            height: 40px;
+            margin-top: -20px;
+        }
+
+        @include max-width-768 {
+            display: none;
+        }
+    }
+
+    &__block-item-img {
+        position: relative;
+        max-width: 253px;
+        @include inlineBlock();
+
+        @media screen and (max-width: 1180px) {
+            max-width: 190px;
+        }
+
+        @include max-width-992 {
+            max-width: 150px;
+        }
+
+        @include max-width-480 {
+            max-width: 200px;
+        }
+
+        a {
+            border-bottom: none;
+        }
+
+        p {
+            width: 100%;
+            height: 20px;
+            font-size: rem(22px);
+            color: #fff;
+            line-height: 1;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+            @media screen and (max-width: 1180px) {
+                font-size: 1.125rem;
+            }
+
+            @include max-width-992 {
+                font-size: 1rem;
+            }
+
+            @include max-width-480 {
+                font-size: 1.25rem;
+            }
+        }
+
+        span {
+            @include max-width-992 {
+                display: block;
+            }
+        }
+
+        img {
+            @media screen and (max-width: 1180px) {
+                width: 100%;
+            }
+
+            @include max-width-768 {
+                margin-bottom: -5px;
+            }
+        }
+    }
+}
+
+.example-enter {
+    opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}

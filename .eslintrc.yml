@@ -1,0 +1,25 @@
+env:
+  browser: true
+  commonjs: true
+
+plugins:
+  - eslint-plugin-babel
+
+parser: babel-eslint
+
+extends:
+  - 'airbnb'
+  - "plugin:react/recommended"
+
+rules:
+  no-console: 0
+#  indent: [2, 4]
+  indent:
+    - error
+    - 4
+    - SwitchCase: 1
+  react/jsx-indent: [2, 4]
+  react/jsx-indent-props: [2, 4]
+  import/no-unresolved: 0
+  import/extensions: 0
+  react/prop-types: 0

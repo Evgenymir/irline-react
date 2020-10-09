@@ -1,0 +1,199 @@
+@import "./mixins";
+@import "./variables";
+
+// setting vars
+$containerWidth: 1920px;
+
+
+// setting style
+* {box-sizing: border-box;}
+
+html {
+	font-size: 16px;
+
+    @include max-width-1280 {
+        font-size: 14px;
+    }
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: 'europe', sans-serif;
+	font-size: 1rem;
+	color: $grey;
+    font-weight: 400;
+	line-height: 1.42;
+	-webkit-font-smoothing: antialiased;
+	background-color: $white;
+}
+
+input, textarea {
+   -webkit-appearance: none;
+   box-shadow: none;
+   -webkit-box-shadow: none;
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
+   border-radius: 0;
+
+   &:focus {
+   	outline: 0;
+   }
+}
+
+select, textarea, button {
+	&:focus {
+   	outline: 0;
+   }
+}
+
+ol, ul {
+	padding: 0;
+	margin: 0;
+}
+
+p {margin: 0; padding: 0;}
+table {border-collapse: separate;border-spacing: 0;}
+caption, th, td {text-align: left;font-weight: normal;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: "";}
+blockquote, q {quotes: "" "";}
+.clear {clear: both;}
+.clearfix:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+//Для картинок
+img {max-width: 100%;}
+
+img.j-image-polyfill {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	font-family: 'object-fit: cover';
+}
+
+// Класс для скрытия блока
+.hide {display: none;}
+// Класс для показа блока
+.show {display: block;}
+
+.container {
+    max-width: $containerWidth;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include max-width-1850 {
+        max-width: 1600px;
+    }
+
+    @include max-width-1600 {
+        max-width: 1500px;
+    }
+
+    @include max-width-1500 {
+        max-width: 1400px;
+    }
+
+    @include max-width-1400 {
+        max-width: 1280px;
+    }
+
+    @include max-width-1280 {
+        max-width: 1180px;
+        padding: 0 10px;
+    }
+
+    @media screen and (max-width: 1180px) {
+        max-width: 992px;
+    }
+
+    @include max-width-992 {
+        max-width: 750px;
+    }
+
+    @include max-width-768 {
+        max-width: 480px;
+    }
+
+    @include max-width-480 {
+        max-width: 100%;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $grey;
+    border-bottom: 1px solid transparent;
+    transition: all ease 0.5s;
+
+    &:hover {
+        border-color: $grey;
+    }
+}
+
+.title {
+    position: relative;
+    font-size: rem(47px);
+    color: $brown;
+    line-height: 1;
+    padding-left: 30px;
+    margin-bottom: 25px;
+
+    &:before {
+        content: "";
+        width: 10px;
+        height: 37px;
+        background-color: $red;
+        position: absolute;
+        top: 3px;
+        left: 0;
+
+        @include max-width-1280 {
+            top: -1px;
+        }
+
+        @include max-width-992 {
+            width: 5px;
+            height: 28px;
+        }
+
+        @include max-width-768 {
+            width: 3px;
+            height: 22px;
+        }
+
+        @include max-width-480 {
+            height: 19px;
+        }
+    }
+
+    h2, h3, h4, h5, h6 {
+        font-size: inherit;
+        margin: 0;
+        font-weight: inherit;
+    }
+
+    @include max-width-1280 {
+        font-size: 2.5rem;
+    }
+
+    @include max-width-992 {
+        font-size: 2rem;
+        padding-left: 15px;
+    }
+
+    @include max-width-768 {
+        font-size: 1.5rem;
+        padding-left: 10px;
+    }
+
+    @include max-width-480 {
+        font-size: 1.5rem;
+    }
+}

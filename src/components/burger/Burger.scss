@@ -1,0 +1,30 @@
+@import '../../css/mixins';
+@import '../../css/variables';
+
+.burger {
+    display: none;
+    width: 40px;
+    cursor: pointer;
+
+    @include max-width-992 {
+        @include inlineBlock(middle);
+        width: 35px;
+    }
+
+    @include max-width-480 {
+        margin-right: 10px;
+    }
+}
+.burger__line {
+    width: 100%;
+    height: 4px;
+    background-color: $white;
+
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
+    @include max-width-768 {
+        height: 3px;
+    }
+}

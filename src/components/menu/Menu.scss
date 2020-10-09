@@ -1,0 +1,63 @@
+@import '../../css/mixins';
+@import '../../css/variables';
+
+.menu {
+    @include inlineBlock();
+    width: 65%;
+    padding-top: 21px;
+
+    @include max-width-1850 {
+        width: 70%;
+    }
+
+    @include max-width-1600 {
+        width: 72%;
+    }
+
+    @include max-width-1500 {
+        width: 74%;
+    }
+
+    @include max-width-1400 {
+        width: 76%;
+    }
+
+    @include max-width-1280 {
+        padding-top: 17px;
+    }
+
+    @media screen and (max-width: 1180px) {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    @include max-width-992 {
+        display: none;
+    }
+}
+
+.menu__list {
+    list-style: none;
+}
+
+.menu__item-0 {
+    @include inlineBlock(middle);
+    margin-right: 2%;
+}
+
+.menu__link-0 {
+    color: $white;
+    font-size: rem(20px);
+
+    &:hover {
+        border-color: $white;
+    }
+
+    @include max-width-1500 {
+        font-size: 1.125rem;
+    }
+
+    @include max-width-1400 {
+        font-size: 1.125rem;
+    }
+}

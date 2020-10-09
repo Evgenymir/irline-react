@@ -1,0 +1,194 @@
+@import '../../css/mixins';
+@import '../../css/variables';
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    padding: 13px 0 18px;
+
+    @media screen and (max-width: 1180px) {
+        padding-top: 5px;
+    }
+
+    @include max-width-768 {
+        padding: 5px 0;
+    }
+
+    &.scroll {
+        background-color: #fff;
+        padding: 3px 0;
+        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.4);
+
+        .menu {
+            padding-top: 18px;
+
+            @media screen and (max-width: 1180px) {
+                padding-top: 0;
+                padding-bottom: 5px;
+            }
+        }
+
+        .menu__link-0,
+        .header__phone {
+            color: $grey;
+
+            &:hover {
+                border-color: $grey;
+            }
+        }
+
+        .header__callBack {
+            border-color: $grey;
+            color: $grey;
+
+            &:hover {
+                border-color: $red;
+                color: #fff;
+            }
+        }
+
+        .header__order  {
+            &:hover {
+                border-color: $grey;
+                color: $grey;
+            }
+        }
+
+        .header__wrap {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .burger__line {
+            @include max-width-992 {
+                background-color: $grey;
+            }
+        }
+    }
+
+    &__wrap {
+        @include flex();
+        align-items: center;
+        border-bottom: 1px solid $grey;
+        padding-bottom: 10px;
+
+        @include max-width-768 {
+            padding-bottom: 3px;
+        }
+
+        @include max-width-480 {
+            display: block;
+        }
+    }
+
+    &__left {
+        width: 50%;
+
+        @media screen and (max-width: 1180px) {
+            width: 44%;
+        }
+
+        @include max-width-992 {
+            width: 25%;
+        }
+
+        @include max-width-768 {
+            width: 50%;
+        }
+
+        @include max-width-480 {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__right {
+        width: 50%;
+        text-align: right;
+
+        @media screen and (max-width: 1180px) {
+            width: 56%;
+        }
+
+        @include max-width-992 {
+            width: 75%;
+        }
+
+        @include max-width-768 {
+            width: 50%;
+        }
+
+        @include max-width-480 {
+            display: none;
+        }
+    }
+
+    &__order.button,
+    &__callBack.button {
+        @include inlineBlock(middle);
+        margin-left: 3%;
+
+        @include max-width-1850 {
+            width: 240px;
+        }
+
+        @include max-width-1500 {
+            width: 225px;
+        }
+
+        @include max-width-1400 {
+            width: 210px;
+            height: 55px;
+            line-height: 51px;
+        }
+
+        @include max-width-1280 {
+            width: 200px;
+        }
+
+        @media screen and (max-width: 1180px) {
+            width: 185px;
+        }
+
+        @include max-width-992 {
+            width: 185px;
+        }
+
+        @include max-width-768 {
+            display: none;
+        }
+    }
+
+    &__callBack.button {
+        margin-left: 0;
+    }
+
+    &__phone {
+        @include inlineBlock(middle);
+        margin-left: 3%;
+        font-size: rem(20px);
+        color: #fff;
+
+        &:hover {
+            border-color: #fff;
+        }
+
+        @include max-width-1600 {
+            font-size: 1.125rem;
+        }
+
+        @include max-width-1400 {
+            font-size: 1rem;
+        }
+
+        @include max-width-992 {
+            font-size: 1rem;
+            line-height: 1;
+        }
+    }
+}

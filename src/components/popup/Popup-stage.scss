@@ -1,0 +1,119 @@
+@import '../../css/mixins';
+@import '../../css/variables';
+
+.popup-stage-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    overflow-y: auto;
+}
+
+.popup-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1560px;
+    background-color: $white;
+    border-radius: 15px;
+    padding: 60px;
+    margin: 40px auto;
+    transition: all ease 1s;
+
+    //&.active {
+    //    left: 50%;
+    //}
+
+    @include max-width-1600 {
+        width: 95%;
+    }
+
+    @include max-width-1280 {
+        width: 90%;
+    }
+
+    @include max-width-768 {
+        padding: 30px;
+    }
+
+    &__close {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+    }
+
+    &__close-line {
+        width: 100%;
+        height: 4px;
+        background-color: $grey;
+        position: absolute;
+        top: 12px;
+        left: 0;
+
+        &:first-child {
+            transform: rotate(45deg);
+        }
+
+        &:last-child {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__content {
+        @include flex(space-between);
+
+        @include max-width-768 {
+            display: block;
+        }
+    }
+
+    &__img {
+        width: 49%;
+        max-width: 670px;
+
+        img {
+            width: 100%;
+        }
+
+        @include max-width-1280 {
+            max-width: 530px;
+            margin-bottom: 20px;
+        }
+
+        @include max-width-992 {
+            max-width: 400px;
+        }
+
+        @include max-width-768 {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        width: 50%;
+        font-size: rem(28px);
+
+        @include max-width-1600 {
+            font-size: 1.5rem;
+        }
+
+        @include max-width-1280 {
+            font-size: 1.25rem;
+        }
+
+        @include max-width-992 {
+            font-size: 1rem;
+        }
+
+        @include max-width-768 {
+            width: 100%;
+        }
+    }
+}
