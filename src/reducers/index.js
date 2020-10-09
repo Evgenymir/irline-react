@@ -28,6 +28,45 @@ const initState = (state = initialState, action) => {
                 error: action.payload.error,
             };
         }
+        case 'STAGES_OF_COOPERATION_OPEN_POPUP': {
+            const { content } = action.payload;
+            const { stagesOfCooperation } = state;
+            // console.log({
+            //     ...state,
+            //     stagesOfCooperation: {
+            //         ...stagesOfCooperation,
+            //         popupContent: content,
+            //         popupUiState: { isActive: true },
+            //     },
+            // });
+            return {
+                ...state,
+                stagesOfCooperation: {
+                    ...stagesOfCooperation,
+                    popupContent: content,
+                    popupUiState: { isActive: true },
+                },
+            };
+        }
+        case 'STAGES_OF_COOPERATION_CLOSE_POPUP': {
+            const { stagesOfCooperation } = state;
+            console.log('11111');
+            // console.log({
+            //     ...state,
+            //     stagesOfCooperation: {
+            //         ...stagesOfCooperation,
+            //         popupContent: content,
+            //         popupUiState: { isActive: true },
+            //     },
+            // });
+            return {
+                ...state,
+                stagesOfCooperation: {
+                    ...stagesOfCooperation,
+                    popupUiState: { isActive: false },
+                },
+            };
+        }
         default:
             return state;
     }

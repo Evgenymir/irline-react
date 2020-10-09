@@ -30,7 +30,7 @@ const Header = ({ logo, header, menuItems }) => {
     }, [scroll]);
 
     return (
-        <header className={`header ${scroll ? 'scroll' : ''}`}>
+        <header className={`header ${scroll ? 'is-scroll' : ''}`}>
             <div className="container">
                 <div className="header__wrap">
                     <div className="header__left">

@@ -7,15 +7,17 @@ import { firstInitApp } from './actions/index';
 import rootReducers from './reducers';
 import App from './App.jsx';
 
-// eslint-disable-next-line no-underscore-dangle
-const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
+const composeEnhancers = typeof window === 'object'
+&& window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
+
+const enhancer = composeEnhancers(
+    applyMiddleware(thunk),
+);
 
 const store = createStore(
     rootReducers,
-    compose(
-        applyMiddleware(thunk),
-        reduxDevtools && reduxDevtools(),
-    ),
+    enhancer,
 );
 
 store.dispatch(firstInitApp());

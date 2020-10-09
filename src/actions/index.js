@@ -30,3 +30,14 @@ export const firstInitApp = () => (dispatch) => {
             dispatch(firstInitAppFailure(e.message));
         });
 };
+
+export const stagesOfCooperationOpenPopup = (content) => ({
+    type: 'STAGES_OF_COOPERATION_OPEN_POPUP',
+    payload: {
+        content,
+    },
+});
+
+export const stagesOfCooperationClosePopup = () => ({
+    type: 'STAGES_OF_COOPERATION_CLOSE_POPUP',
+});

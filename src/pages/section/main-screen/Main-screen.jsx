@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './Main-screen.scss';
 import SlickSlider from 'react-slick';
 import '../../../../node_modules/slick-carousel/slick/slick.scss';
@@ -35,7 +36,7 @@ const sliderSettings = {
     dots: false,
     infinite: true,
     fade: true,
-    speed: 300,
+    speed: 500,
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: false,
@@ -45,34 +46,47 @@ const sliderSettings = {
     nextArrow: <NextArrow />,
 };
 
-const MainScreen = ({ slider }) => (
-    <section className="main-screen">
-        <div className="main-screen__wrap">
-            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-            <SlickSlider className="main-screen__slider" {...sliderSettings}>
-                { slider.map(({
-                    id, text, link, linkText, img,
-                }) => (
-                    <div key={id}>
-                        <div className="main-screen__slider-item" style={{ backgroundImage: `url(${img})` }}>
-                            <div className="main-screen__slider-item-title" dangerouslySetInnerHTML={{ __html: text }} />
-                            <Button link={link} text={linkText} additionalClasses="main-screen__slider-item-link button--red" />
+const mapStateToProps = ({ initState }) => {
+    const { mainSlider } = initState;
+    return {
+        sliderItems: mainSlider,
+    };
+};
+
+const MainScreen = ({ sliderItems }) => {
+    return (
+        <section className="main-screen">
+            <div className="main-screen__wrap">
+                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                <SlickSlider className="main-screen__slider" {...sliderSettings}>
+                    { sliderItems.map(({
+                        id, text, link, linkText, img,
+                    }) => (
+                        <div key={id}>
+                            <div className="main-screen__slider-item" style={{ backgroundImage: `url(${img})` }}>
+                                <div className="main-screen__slider-item-title" dangerouslySetInnerHTML={{ __html: text }} />
+                                <Button link={link} text={linkText} additionalClasses="main-screen__slider-item-link button--red" />
+                            </div>
                         </div>
-                    </div>
-                )) }
-            </SlickSlider>
-        </div>
-    </section>
-);
+                    )) }
+                </SlickSlider>
+            </div>
+        </section>
+    );
+};
+
+MainScreen.defaultProps = {
+    sliderItems: [],
+};
 
 MainScreen.propTypes = {
-    slider: PropTypes.arrayOf(PropTypes.shape({
+    sliderItems: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         text: PropTypes.string,
         link: PropTypes.string.isRequired,
         linkText: PropTypes.string.isRequired,
         img: PropTypes.string.isRequired,
-    })).isRequired,
+    })),
 };
 
-export default MainScreen;
+export default connect(mapStateToProps)(MainScreen);
