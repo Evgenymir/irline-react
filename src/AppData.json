@@ -170,6 +170,7 @@
     "popupContent": {},
     "popupUiState": {
       "isActive": null
-    }
+    },
+    "test": "test"
   }
 }
