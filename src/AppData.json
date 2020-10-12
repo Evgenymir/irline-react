@@ -53,6 +53,7 @@
     }
   ],
   "stagesOfCooperation": {
+    "title": "Этапы сотрудничества",
     "stages": {
       "byId": {
         "stage1": {
@@ -171,5 +172,47 @@
     "popupUiState": {
       "isActive": null
     }
+  },
+  "aboutCompany": {
+    "title": "О компании",
+    "byId": {
+      "about1": {
+        "id": 1,
+        "text": "Более 25 лет <br/> на рынке",
+        "img": "./img/company/company1.jpg",
+        "imgAlt": "Картинка"
+      },
+      "about2": {
+        "id": 2,
+        "text": "15 246 благодарных клиентов",
+        "img": "./img/company/company2.jpg",
+        "imgAlt": "Картинка"
+      },
+      "about3": {
+        "id": 3,
+        "text": "Работа во всех <br/> регионах России",
+        "img": "./img/company/company3.jpg",
+        "imgAlt": "Картинка"
+      },
+      "about4": {
+        "id": 4,
+        "text": "Производственно - складские помещения более 10 600 м2",
+        "img": "./img/company/company4.jpg",
+        "imgAlt": "Картинка"
+      },
+      "about5": {
+        "id": 5,
+        "text": "Ежегодно монтируется около 16 000 м2 перегородок",
+        "img": "./img/company/company5.jpg",
+        "imgAlt": "Картинка"
+      },
+      "about6": {
+        "id": 6,
+        "text": "378 оригинальных реализованных интерьерных решений",
+        "img": "./img/company/company6.jpg",
+        "imgAlt": "Картинка"
+      }
+    },
+    "allIds": ["about1", "about2", "about3", "about4", "about5", "about6"]
   }
 }

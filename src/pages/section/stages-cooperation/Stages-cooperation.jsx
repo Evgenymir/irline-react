@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Stages-cooperation.scss';
 import { connect } from 'react-redux';
 import PopupStages from '../../../components/popup/Popup-stage.jsx';
@@ -10,9 +11,10 @@ const normalizeData = (data) => {
     }
 
     const {
-        stages, contents, popupContent, popupUiState,
+        title, stages, contents, popupContent, popupUiState,
     } = data;
     return {
+        title,
         items: stages.allIds.map((item) => stages.byId[item]),
         contents: contents.allIds.map((item) => contents.byId[item]),
         popupContent,
@@ -76,11 +78,12 @@ class StagesCooperation extends React.Component {
     }
 
     render() {
+        const { title } = this.props;
         return (
             <section className="stages-cooperation">
                 <div className="container">
                     <div className="stages-cooperation__title title">
-                        <h3>Этапы сотрудничества</h3>
+                        <h3>{title}</h3>
                     </div>
                     { this.renderItems() }
                 </div>
@@ -89,5 +92,33 @@ class StagesCooperation extends React.Component {
         );
     }
 }
+
+StagesCooperation.defaultProps = {
+    title: 'Нет заголовка',
+    items: [{
+        id: 'test',
+        img: './img/stages/stages1.jpg',
+        imgAlt: 'example',
+        text: 'example text',
+        arrowImg: './img/arrowLIne.jpg',
+    }],
+    contents: [],
+    popupContent: {},
+    isActivePopup: null,
+};
+
+StagesCooperation.propTypes = {
+    title: PropTypes.string,
+    items: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        img: PropTypes.string,
+        imgAlt: PropTypes.string,
+        text: PropTypes.string,
+        arrowImg: PropTypes.string,
+    })),
+    contents: PropTypes.arrayOf(PropTypes.object),
+    popupContent: PropTypes.objectOf(PropTypes.string),
+    isActivePopup: PropTypes.bool,
+};
 
 export default connect(mapToStateProps)(StagesCooperation);

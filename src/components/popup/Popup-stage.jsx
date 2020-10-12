@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import './Popup-stage.scss';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
@@ -54,6 +55,13 @@ const PopupStage = ({
             </div>
         </CSSTransition>
     );
+};
+
+PopupStage.propTypes = {
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    dispatch: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(PopupStage);

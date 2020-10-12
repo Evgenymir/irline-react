@@ -1,0 +1,199 @@
+@import '../../../css/mixins';
+@import '../../../css/variables';
+
+.about {
+    background-color: $white;
+    padding-top: 117px;
+    padding-bottom: 75px;
+
+    @include max-width-1280 {
+        padding-top: 80px;
+        padding-bottom: 50px;
+    }
+
+    @include max-width-992 {
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    @include max-width-768 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__content {
+        @include flex(center);
+        flex-wrap: wrap;
+        margin-left: -1%;
+
+        @include max-width-768 {
+            margin-left: -2%;
+        }
+
+        @include max-width-480 {
+            display: block;
+            margin-left: 0;
+        }
+    }
+
+    &__item {
+        width: 32.3%;
+        margin-left: 1%;
+        margin-bottom: 20px;
+
+        @include max-width-768 {
+            width: 48%;
+            margin-left: 2%;
+            margin-bottom: 10px;
+        }
+
+        @include max-width-480 {
+            width: 100%;
+            max-width: 270px;
+            margin: 0 auto 10px;
+        }
+    }
+
+    &__item-img {
+        img {
+            width: 100%;
+            margin-bottom: -7px;
+        }
+
+        @include max-width-768 {
+            height: 170px;
+            overflow: hidden;
+
+            img {
+                margin-top: -53px;
+            }
+        }
+
+        @include max-width-480 {
+            height: auto;
+        }
+    }
+
+    &__item-text {
+        position: relative;
+        font-size: rem(36px);
+        color: #fff;
+        text-transform: uppercase;
+        background-color: $grey;
+        padding: 65px 8% 65px 10%;
+        line-height: 1.2;
+
+        @include max-width-1850 {
+            font-size: rem(30px);
+        }
+
+        @include max-width-1600 {
+            font-size: 1.5rem;
+        }
+
+        @media screen and (max-width: 1180px) {
+            font-size: 1.25rem;
+            padding: 40px 5% 40px 5%;
+        }
+
+        @include max-width-992 {
+            font-size: 1rem;
+            padding: 30px 5% 30px 5%;
+        }
+
+        @include max-width-768 {
+            height: 95px;
+            text-align: center;
+            font-size: 1rem;
+            padding: 30px 1% 30px 1%;
+        }
+
+        @include max-width-480 {
+            height: auto;
+        }
+    }
+
+    &__item-text-span {
+        position: absolute;
+        top: -45px;
+        left: 0;
+        display: block;
+        width: 182px;
+        height: 90px;
+        font-size: rem(74px);
+        line-height: 95px;
+        text-align: center;
+        background-color: $red;
+
+        @include max-width-1850 {
+            font-size: rem(54px);
+        }
+
+        @include max-width-1600 {
+            width: 110px;
+            height: 65px;
+            font-size: 3rem;
+            line-height: 1;
+            padding-top: 10px;
+            top: -32px;
+        }
+
+        @include max-width-1280 {
+            width: 80px;
+            height: 50px;
+            font-size: 2.5rem;
+            top: -25px;
+        }
+
+        @include max-width-992 {
+            width: 65px;
+            height: 40px;
+            font-size: 1.75rem;
+            top: -20px;
+        }
+
+        @include max-width-768 {
+            width: 50px;
+            height: 30px;
+            font-size: 1.25rem;
+            top: -15px;
+            padding-top: 8px;
+        }
+    }
+
+    &__item-text-arrow {
+        display: block;
+        width: 47px;
+        height: 90px;
+        background-position:  top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 0;
+        right: -44px;
+
+        @include max-width-1600 {
+            width: 34px;
+            height: 65px;
+            right: -33px;
+        }
+
+        @include max-width-1280 {
+            width: 28px;
+            height: 50px;
+            right: -26px;
+        }
+
+        @include max-width-992 {
+            width: 22px;
+            height: 40px;
+            right: -20px;
+        }
+
+        @include max-width-768 {
+            width: 16px;
+            height: 30px;
+            right: -15px;
+        }
+    }
+}
