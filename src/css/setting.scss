@@ -29,6 +29,16 @@ body {
 	line-height: 1.42;
 	-webkit-font-smoothing: antialiased;
 	background-color: $white;
+
+    &.is-scroll-blocked {
+        height: 100vh;
+        overflow: hidden;
+        padding-right: 17px;
+
+        @include max-width-480 {
+            padding-right: 0;
+        }
+    }
 }
 
 input, textarea {
