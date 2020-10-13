@@ -214,5 +214,43 @@
       }
     },
     "allIds": ["about1", "about2", "about3", "about4", "about5", "about6"]
+  },
+  "gratefulClients": {
+    "title": "Благодарные клиенты",
+    "gratitudes": {
+      "byId": {
+        "gratitude1": {
+          "id": 1,
+          "img": "./img/gratitudes/gratitude1.jpg",
+          "imgBig": "./img/gratitudes/big/gratitude1.jpg",
+          "imgAlt": "Благодарность"
+        },
+        "gratitude2": {
+          "id": 2,
+          "img": "./img/gratitudes/gratitude2.jpg",
+          "imgBig": "./img/gratitudes/big/gratitude2.jpg",
+          "imgAlt": "Благодарность"
+        },
+        "gratitude3": {
+          "id": 3,
+          "img": "./img/gratitudes/gratitude3.jpg",
+          "imgBig": "./img/gratitudes/big/gratitude3.jpg",
+          "imgAlt": "Благодарность"
+        },
+        "gratitude4": {
+          "id": 4,
+          "img": "./img/gratitudes/gratitude4.jpg",
+          "imgBig": "./img/gratitudes/big/gratitude4.jpg",
+          "imgAlt": "Благодарность"
+        },
+        "gratitude5": {
+          "id": 5,
+          "img": "./img/gratitudes/gratitude5.jpg",
+          "imgBig": "./img/gratitudes/big/gratitude5.jpg",
+          "imgAlt": "Благодарность"
+        }
+      },
+      "allIds": ["gratitude1", "gratitude2", "gratitude3", "gratitude4", "gratitude5"]
+    }
   }
 }
