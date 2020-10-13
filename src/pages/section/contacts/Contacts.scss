@@ -1,0 +1,110 @@
+@import '../../../css/mixins';
+@import '../../../css/variables';
+
+.contacts-section {
+    position: relative;
+    @include flex();
+
+    @include max-width-768 {
+        display: block;
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 639px;
+        height: 950px;
+        font-size: rem(30px);
+        color: $black;
+        text-align: left;
+        background: #eeeeee;
+        padding: 300px 3% 80px 5%;
+
+        @include max-width-1600 {
+            height: 800px;
+            font-size: 1.5rem;
+            padding-top: 200px;
+        }
+
+        @include max-width-1280 {
+            width: 470px;
+            height: 600px;
+            font-size: 1.25rem;
+            padding-top: 150px;
+        }
+
+        @include max-width-992 {
+            width: 352px;
+            height: 410px;
+            font-size: 1rem;
+            padding-top: 100px;
+        }
+
+        @include max-width-768 {
+            position: static;
+            width: 100%;
+            height: auto;
+            background-color: #fff;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+    }
+
+    &__email {
+        color: $black;
+        display: block;
+        border: none;
+        margin-bottom: 60px;
+
+        @include max-width-768 {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__phone {
+        color: $black;
+        display: block;
+        border: none;
+        margin-bottom: 200px;
+
+        @include max-width-1280 {
+            margin-bottom: 100px;
+        }
+
+        @include max-width-992 {
+            margin-bottom: 50px;
+        }
+
+        @include max-width-768 {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__button {
+        border-color: $red;
+        border-width: 1px;
+        line-height: 56px;
+        color: $red;
+
+        &:hover {
+            color: $white;
+        }
+
+        @include max-width-1280 {
+            line-height: 48px;
+        }
+
+        @include max-width-992 {
+            line-height: 38px;
+        }
+
+        @include max-width-768 {
+            width: 150px;
+            height: 30px;
+            line-height: 28px;
+            font-size: 0.875rem;
+        }
+    }
+}

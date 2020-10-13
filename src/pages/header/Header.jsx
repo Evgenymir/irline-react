@@ -8,16 +8,22 @@ import Button from '../../components/button/Button.jsx';
 import Logo from '../../components/logo/Logo.jsx';
 
 const mapStateToProps = ({ initState }) => {
-    const { logo, header, menuItems } = initState;
+    const {
+        logo, phone, callBack, order, menuItems,
+    } = initState;
+
     return {
         logo,
-        header,
+        phone,
+        callBack,
+        order,
         menuItems,
     };
 };
 
-const Header = ({ logo, header, menuItems }) => {
-    const { callBack, order, phone } = header;
+const Header = ({
+    logo, callBack, order, phone, menuItems,
+}) => {
     const phoneWithoutSpaces = phone.split('').map((item) => item.trim()).join('');
 
     const [scroll, setScroll] = useState(false);
@@ -54,11 +60,9 @@ Header.defaultProps = {
         white: './img/logo.png',
         grey: './img/logoGrey.png',
     },
-    header: {
-        callBack: 'Кнопка',
-        order: 'Кнопка',
-        phone: 'Телефон',
-    },
+    callBack: 'Кнопка',
+    order: 'Кнопка',
+    phone: 'Телефон',
     menuItems: [{
         id: 0,
         title: 'Пример',
@@ -71,11 +75,9 @@ Header.propTypes = {
         white: PropTypes.string,
         grey: PropTypes.string,
     }),
-    header: PropTypes.shape({
-        callBack: PropTypes.string,
-        order: PropTypes.string,
-        phone: PropTypes.string,
-    }),
+    callBack: PropTypes.string,
+    order: PropTypes.string,
+    phone: PropTypes.string,
     menuItems: PropTypes.arrayOf(PropTypes.object),
 };
 

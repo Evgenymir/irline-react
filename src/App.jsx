@@ -5,6 +5,7 @@ import MainScreen from './pages/section/main-screen/Main-screen.jsx';
 import StagesCooperation from './pages/section/stages-cooperation/Stages-cooperation.jsx';
 import AboutCompany from './pages/section/about-company/About-company.jsx';
 import GratefulClients from './pages/section/grateful-clients/Grateful-clients.jsx';
+import Contacts from './pages/section/contacts/Contacts.jsx';
 
 const App = () => (
     <>
@@ -13,6 +14,7 @@ const App = () => (
         <StagesCooperation />
         <AboutCompany />
         <GratefulClients />
+        <Contacts />
     </>
 );
 
