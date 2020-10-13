@@ -1,0 +1,97 @@
+@import '../../css/mixins';
+@import '../../css/variables';
+
+.footer {
+    background-color: $white;
+    padding: 75px 0 100px;
+
+    @include max-width-1280 {
+        padding: 50px 0;
+    }
+
+    @include max-width-992 {
+        padding: 40px 0;
+    }
+
+    @include max-width-768 {
+        padding: 20px 0;
+    }
+
+    &__content {
+        @include flex();
+
+        @include max-width-768 {
+            flex-wrap: wrap;
+        }
+
+        @include max-width-480 {
+            display: block;
+        }
+    }
+
+    &__item {
+        width: 25%;
+        font-size: rem(18px);
+
+        @include max-width-992 {
+            font-size: 1rem;
+        }
+
+        @include max-width-768 {
+            width: 46%;
+        }
+
+        @include max-width-480 {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        &:last-child {
+            text-align: right;
+
+            @include max-width-480 {
+                text-align: center;
+            }
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                margin-bottom: 30px;
+                line-height: 1;
+
+                @include max-width-992 {
+                    margin-bottom: 15px;
+                }
+
+                @include max-width-480 {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    &__item-title {
+        font-size: rem(24px);
+        color: $brown;
+        margin-bottom: 30px;
+
+        @include max-width-1280 {
+            font-size: 1.25rem;
+        }
+
+        @include max-width-992 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__item-policy {
+        display: block;
+        color: $red;
+        margin-top: 20px;
+        border-bottom: 0;
+    }
+}

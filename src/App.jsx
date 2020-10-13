@@ -6,6 +6,7 @@ import StagesCooperation from './pages/section/stages-cooperation/Stages-coopera
 import AboutCompany from './pages/section/about-company/About-company.jsx';
 import GratefulClients from './pages/section/grateful-clients/Grateful-clients.jsx';
 import Contacts from './pages/section/contacts/Contacts.jsx';
+import Footer from './pages/footer/Footer.jsx';
 
 const App = () => (
     <>
@@ -15,6 +16,7 @@ const App = () => (
         <AboutCompany />
         <GratefulClients />
         <Contacts />
+        <Footer />
     </>
 );
 
