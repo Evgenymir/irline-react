@@ -1,0 +1,17 @@
+@import '../../css/mixins';
+@import '../../css/variables';
+.form {
+    text-align: center;
+
+    &__button {
+        @include max-width-1280 {
+            height: 50px;
+            line-height: 46px;
+        }
+
+        &:hover {
+            border-color: lighten($red, 10%);
+            background-color: lighten($red, 10%);
+        }
+    }
+}

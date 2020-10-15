@@ -30,6 +30,13 @@
         }
     }
 
+    &:disabled {
+        background-color: $lightGrey;
+        border-color: $lightGrey;
+        color: $grey;
+        pointer-events: none;
+    }
+
     @include max-width-1280 {
         height: 50px;
         line-height: 46px;

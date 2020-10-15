@@ -1,0 +1,116 @@
+@import '../../css/mixins';
+@import '../../css/variables';
+
+.popup-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(7px);
+    padding: 40px 0;
+    overflow-y: auto;
+    transition: opacity ease 0.3s;
+
+    &.popup-animation-enter {
+        opacity: 0;
+
+        .popup {
+            transform: scale(0.9);
+        }
+    }
+
+    &.popup-animation-enter-active {
+        opacity: 1;
+
+        .popup {
+            transform: scale(1);
+        }
+    }
+
+    &.popup-animation-exit {
+        opacity: 1;
+    }
+
+    &.popup-animation-exit-active {
+        opacity: 0;
+    }
+}
+
+.popup {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    background-color: $white;
+    border-radius: 15px;
+    padding: 60px;
+    margin: auto;
+    transition: all ease-out 0.5s;
+
+    @include max-width-768 {
+        max-width: 400px;
+    }
+
+    @include max-width-480 {
+        max-width: 90%;
+        padding: 30px 15px;
+        border-radius: 10px;
+    }
+
+    &__close {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+
+        @include max-width-480 {
+            width: 25px;
+            height: 25px;
+            top: 7px;
+            right: 10px;
+        }
+    }
+
+    &__close-line {
+        width: 100%;
+        height: 4px;
+        background-color: $grey;
+        position: absolute;
+        top: 12px;
+        left: 0;
+
+        &:first-child {
+            transform: rotate(45deg);
+        }
+
+        &:last-child {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__title {
+        text-align: center;
+        font-size: rem(24px);
+        text-transform: uppercase;
+        color: $brown;
+        margin-bottom: 25px;
+
+        @include max-width-768 {
+            font-size: 1.25rem;
+        }
+
+        @include max-width-480 {
+            font-size: 1.125rem;
+        }
+    }
+
+
+}
