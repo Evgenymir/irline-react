@@ -34,30 +34,30 @@
     @include max-width-992 {
         display: none;
     }
-}
 
-.menu__list {
-    list-style: none;
-}
-
-.menu__item-0 {
-    @include inlineBlock(middle);
-    margin-right: 2%;
-}
-
-.menu__link-0 {
-    color: $white;
-    font-size: rem(20px);
-
-    &:hover {
-        border-color: $white;
+    &__list {
+        list-style: none;
     }
 
-    @include max-width-1500 {
-        font-size: 1.125rem;
+    &__list-item {
+        @include inlineBlock(middle);
+        margin-right: 2%;
     }
 
-    @include max-width-1400 {
-        font-size: 1.125rem;
+    &__list-link {
+        color: $white;
+        font-size: rem(20px);
+
+        &:hover {
+            border-color: $white;
+        }
+
+        @include max-width-1500 {
+            font-size: 1.125rem;
+        }
+
+        @include max-width-1400 {
+            font-size: 1.125rem;
+        }
     }
 }

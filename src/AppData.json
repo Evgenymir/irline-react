@@ -348,6 +348,9 @@
     "popupForm": {
       "isActive": false,
       "nameForm": ""
+    },
+    "mobileMenu": {
+      "isActive": false
     }
   }
 }

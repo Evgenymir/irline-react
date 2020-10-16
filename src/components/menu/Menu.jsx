@@ -11,8 +11,8 @@ const Menu = ({ menu }) => {
         <nav className="menu">
             <ul className="menu__list">
                 {menu.map(({ id, title, link }) => (
-                    <li className="menu__item-0" key={id}>
-                        <a href={link} className="menu__link-0">{title}</a>
+                    <li className="menu__list-item" key={id}>
+                        <a href={link} className="menu__list-link">{title}</a>
                     </li>
                 ))}
             </ul>

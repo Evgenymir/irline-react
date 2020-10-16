@@ -52,3 +52,11 @@ export const openPopupForm = (name) => ({
 export const closePopupForm = () => ({
     type: 'CLOSE_POPUP_FORM',
 });
+
+export const openMobileMenu = () => ({
+    type: 'OPEN_MOBILE_MENU',
+});
+
+export const closeMobileMenu = () => ({
+    type: 'CLOSE_MOBILE_MENU',
+});

@@ -6,6 +6,8 @@ import Menu from '../../components/menu/Menu.jsx';
 import Burger from '../../components/burger/Burger.jsx';
 import Button from '../../components/button/Button.jsx';
 import Logo from '../../components/logo/Logo.jsx';
+import phoneWithoutSpaces from '../../assets/js/phoneWithoutSpaces';
+import { openMobileMenu } from '../../actions/index';
 
 const mapStateToProps = ({ initState }) => {
     const {
@@ -22,10 +24,8 @@ const mapStateToProps = ({ initState }) => {
 };
 
 const Header = ({
-    logo, callBack, order, phone, menuItems,
+    logo, callBack, order, phone, menuItems, dispatch,
 }) => {
-    const phoneWithoutSpaces = phone.split('').map((item) => item.trim()).join('');
-
     const [scroll, setScroll] = useState(false);
 
     useEffect(() => {
@@ -35,6 +35,10 @@ const Header = ({
         });
     }, [scroll]);
 
+    const handleOpenMobileMenu = () => {
+        dispatch(openMobileMenu());
+    };
+
     return (
         <header className={`header ${scroll ? 'is-scroll' : ''}`}>
             <div className="container">
@@ -42,11 +46,11 @@ const Header = ({
                     <div className="header__left">
                         <Logo img={!scroll ? logo.white : logo.grey} />
                         <Menu menu={menuItems} />
-                        <Burger />
+                        <Burger openMenu={handleOpenMobileMenu} />
                     </div>
                     <div className="header__right">
                         <Button link={callBack.link} text={callBack.name} additionalClasses="header__callBack" />
-                        <a href={`tel:${phoneWithoutSpaces}`} className="header__phone">{phone}</a>
+                        <a href={`tel:${phoneWithoutSpaces(phone)}`} className="header__phone">{phone}</a>
                         <Button link={order.link} text={order.name} additionalClasses="header__order button--red" />
                     </div>
                 </div>
@@ -82,6 +86,7 @@ Header.propTypes = {
     order: PropTypes.objectOf(PropTypes.string),
     phone: PropTypes.string,
     menuItems: PropTypes.arrayOf(PropTypes.object),
+    dispatch: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(Header);

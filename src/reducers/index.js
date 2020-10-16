@@ -62,6 +62,9 @@ const initState = (state = initialState, action) => {
                         isActive: true,
                         nameForm: name,
                     },
+                    mobileMenu: {
+                        isActive: false,
+                    },
                 },
             };
         }
@@ -75,6 +78,31 @@ const initState = (state = initialState, action) => {
                     popupForm: {
                         isActive: false,
                         nameForm: '',
+                    },
+                },
+            };
+        }
+        case 'OPEN_MOBILE_MENU': {
+            const { UIState } = state;
+            return {
+                ...state,
+                UIState: {
+                    ...UIState,
+                    mobileMenu: {
+                        isActive: true,
+                    },
+                },
+            };
+        }
+        case 'CLOSE_MOBILE_MENU': {
+            const { UIState } = state;
+
+            return {
+                ...state,
+                UIState: {
+                    ...UIState,
+                    mobileMenu: {
+                        isActive: false,
                     },
                 },
             };

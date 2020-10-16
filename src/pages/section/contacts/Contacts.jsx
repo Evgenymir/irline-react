@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Button from '../../../components/button/Button.jsx';
 import './Contacts.scss';
 import Map from '../../../components/map/yandexMap.jsx';
+import phoneWithoutSpaces from '../../../assets/js/phoneWithoutSpaces';
 
 const mapStateToProps = ({ initState }) => {
     const {
@@ -15,23 +16,20 @@ const mapStateToProps = ({ initState }) => {
 };
 const Contacts = ({
     map, address, email, phone, callBack,
-}) => {
-    const phoneWithoutSpaces = phone.split('').map((item) => item.trim()).join('');
-    return (
-        <section className="contacts-section">
-            <Map data={map} />
-            <div className="contacts-section__content">
-                <p>{address}</p>
-                <a href={`mailto:${email}`} className="contacts-section__email">
-                    e-mail:&nbsp;
-                    {email}
-                </a>
-                <a href={`tel:${phoneWithoutSpaces}`} className="contacts-section__phone">{phone}</a>
-                <Button link={callBack.link} text={callBack.name} additionalClasses="contacts-section__button" />
-            </div>
-        </section>
-    );
-};
+}) => (
+    <section className="contacts-section">
+        <Map data={map} />
+        <div className="contacts-section__content">
+            <p>{address}</p>
+            <a href={`mailto:${email}`} className="contacts-section__email">
+                e-mail:&nbsp;
+                {email}
+            </a>
+            <a href={`tel:${phoneWithoutSpaces(phone)}`} className="contacts-section__phone">{phone}</a>
+            <Button link={callBack.link} text={callBack.name} additionalClasses="contacts-section__button" />
+        </div>
+    </section>
+);
 
 Contacts.defaultProps = {
     map: {},
