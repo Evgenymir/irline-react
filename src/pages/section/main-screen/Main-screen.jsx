@@ -53,26 +53,35 @@ const mapStateToProps = ({ initState }) => {
     };
 };
 
-const MainScreen = ({ sliderItems }) => {
-    return (
-        <section className="main-screen">
-            <div className="main-screen__wrap">
-                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                <SlickSlider className="main-screen__slider" {...sliderSettings}>
-                    { sliderItems.map(({
-                        id, text, link, linkText, img,
-                    }) => (
-                        <div key={id}>
-                            <div className="main-screen__slider-item" style={{ backgroundImage: `url(${img})` }}>
-                                <div className="main-screen__slider-item-title" dangerouslySetInnerHTML={{ __html: text }} />
-                                <Button link={link} text={linkText} additionalClasses="main-screen__slider-item-link button--red" />
-                            </div>
+const MainScreen = ({ sliderItems }) => (
+    <section className="main-screen">
+        <div className="main-screen__wrap">
+            <SlickSlider className="main-screen__slider" {...sliderSettings}>
+                { sliderItems.map(({
+                    id, text, link, linkText, img,
+                }) => (
+                    <div key={id}>
+                        <div className="main-screen__slider-item" style={{ backgroundImage: `url(${img})` }}>
+                            <div className="main-screen__slider-item-title" dangerouslySetInnerHTML={{ __html: text }} />
+                            <Button link={link} text={linkText} additionalClasses="main-screen__slider-item-link button--red" />
                         </div>
-                    )) }
-                </SlickSlider>
-            </div>
-        </section>
-    );
+                    </div>
+                )) }
+            </SlickSlider>
+        </div>
+    </section>
+);
+
+PrevArrow.propTypes = {
+    className: PropTypes.string.isRequired,
+    style: PropTypes.objectOf(PropTypes.string).isRequired,
+    onClick: PropTypes.func.isRequired,
+};
+
+NextArrow.propTypes = {
+    className: PropTypes.string.isRequired,
+    style: PropTypes.objectOf(PropTypes.string).isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 MainScreen.defaultProps = {

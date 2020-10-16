@@ -51,6 +51,34 @@ const initState = (state = initialState, action) => {
                 },
             };
         }
+        case 'OPEN_POPUP_FORM': {
+            const { UIState } = state;
+            const { name } = action.payload;
+            return {
+                ...state,
+                UIState: {
+                    ...UIState,
+                    popupForm: {
+                        isActive: true,
+                        nameForm: name,
+                    },
+                },
+            };
+        }
+        case 'CLOSE_POPUP_FORM': {
+            const { UIState } = state;
+
+            return {
+                ...state,
+                UIState: {
+                    ...UIState,
+                    popupForm: {
+                        isActive: false,
+                        nameForm: '',
+                    },
+                },
+            };
+        }
         default:
             return state;
     }

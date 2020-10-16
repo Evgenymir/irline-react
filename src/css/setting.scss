@@ -35,8 +35,16 @@ body {
         overflow: hidden;
         padding-right: 17px;
 
+        .header {
+            padding-right: 17px;
+        }
+
         @include max-width-480 {
             padding-right: 0;
+
+            .header {
+                padding-right: 0;
+            }
         }
     }
 }

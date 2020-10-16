@@ -1,14 +1,11 @@
-import axios from 'axios';
-
-const sendingData = ({ data, reset }) => {
-    const normalizeData = {
-        name: data.name,
-        phone: data.phone,
+const sendingData = ({ data }) => {
+    const normalizeData = JSON.stringify(data);
+    const result = {
+        data: normalizeData,
+        status: 200,
     };
-    // console.log(normalizeData);
-    axios.post('mail.php', normalizeData).then((response) => {
-        console.log(response);
-    });
+
+    return result;
 };
 
 export default sendingData;

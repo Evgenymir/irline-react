@@ -19,14 +19,14 @@ const PopupStage = ({
     const body = document.querySelector('body');
 
     useEffect(() => {
-        setIsActivePopup(true);
         body.classList.add('is-scroll-blocked');
+        setIsActivePopup(true);
     }, []);
 
     const closePopup = () => {
         setIsActivePopup(false);
-        body.classList.remove('is-scroll-blocked');
         setTimeout(() => {
+            body.classList.remove('is-scroll-blocked');
             dispatch(stagesOfCooperationClosePopup());
         }, 300);
     };

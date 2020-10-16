@@ -27,7 +27,7 @@ const Contacts = ({
                     {email}
                 </a>
                 <a href={`tel:${phoneWithoutSpaces}`} className="contacts-section__phone">{phone}</a>
-                <Button link="#callBack" text={callBack} additionalClasses="contacts-section__button" />
+                <Button link={callBack.link} text={callBack.name} additionalClasses="contacts-section__button" />
             </div>
         </section>
     );
@@ -38,7 +38,10 @@ Contacts.defaultProps = {
     address: 'Нет адреса',
     email: 'Нет email адреса',
     phone: 'Нет номера',
-    callBack: 'Кнопка',
+    callBack: {
+        name: 'Кнопка',
+        link: 'callBack',
+    },
 };
 
 Contacts.propTypes = {
@@ -51,7 +54,7 @@ Contacts.propTypes = {
     address: PropTypes.string,
     email: PropTypes.string,
     phone: PropTypes.string,
-    callBack: PropTypes.string,
+    callBack: PropTypes.objectOf(PropTypes.string),
 };
 
 export default connect(mapStateToProps)(Contacts);

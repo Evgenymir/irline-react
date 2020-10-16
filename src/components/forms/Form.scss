@@ -15,3 +15,13 @@
         }
     }
 }
+
+.form-thanks {
+    text-align: center;
+
+    &__text {
+        font-size: rem(18px);
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+}

@@ -119,6 +119,7 @@ StagesCooperation.propTypes = {
     contents: PropTypes.arrayOf(PropTypes.object),
     popupContent: PropTypes.objectOf(PropTypes.string),
     isActivePopup: PropTypes.bool,
+    dispatch: PropTypes.func.isRequired,
 };
 
 export default connect(mapToStateProps)(StagesCooperation);

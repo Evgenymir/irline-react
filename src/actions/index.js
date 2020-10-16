@@ -41,3 +41,14 @@ export const stagesOfCooperationOpenPopup = (content) => ({
 export const stagesOfCooperationClosePopup = () => ({
     type: 'STAGES_OF_COOPERATION_CLOSE_POPUP',
 });
+
+export const openPopupForm = (name) => ({
+    type: 'OPEN_POPUP_FORM',
+    payload: {
+        name,
+    },
+});
+
+export const closePopupForm = () => ({
+    type: 'CLOSE_POPUP_FORM',
+});

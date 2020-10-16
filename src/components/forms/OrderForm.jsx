@@ -4,12 +4,12 @@ import { reduxForm, Field } from 'redux-form';
 import PropTypes from 'prop-types';
 import Button from '../button/Button.jsx';
 import maskPhone from '../../assets/js/maskPhone';
-import { required, phoneLength } from '../../assets/js/formValidate';
-import Input from '../formControls/Input.jsx';
+import { required, phoneLength, email } from '../../assets/js/formValidate';
 import './Form.scss';
+import Input from '../formControls/Input.jsx';
 
 const mapStateToProps = (state) => {
-    const form = state.form.callBackForm;
+    const form = state.form.orderForm;
     if (form === undefined) {
         return {};
     }
@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
     };
 };
 
-const CallBackForm = ({ handleSubmit, invalid }) => (
+const OrderForm = ({ handleSubmit, invalid }) => (
     <form onSubmit={handleSubmit} className="form">
         <Field
             name="name"
@@ -37,6 +37,13 @@ const CallBackForm = ({ handleSubmit, invalid }) => (
             placeholder="Телефон"
             {...maskPhone}
         />
+        <Field
+            name="email"
+            component={Input}
+            type="email"
+            validate={[required, email]}
+            placeholder="Email"
+        />
         <Button
             buttonType="submit"
             additionalClasses="form__button button--red"
@@ -46,13 +53,13 @@ const CallBackForm = ({ handleSubmit, invalid }) => (
     </form>
 );
 
-CallBackForm.propTypes = {
+OrderForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     invalid: PropTypes.bool.isRequired,
 };
 
-const ConnectedForm = connect(mapStateToProps)(CallBackForm);
+const ConnectedForm = connect(mapStateToProps)(OrderForm);
 
 export default reduxForm({
-    form: 'callBackForm',
+    form: 'orderForm',
 })(ConnectedForm);

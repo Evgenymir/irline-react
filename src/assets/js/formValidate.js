@@ -13,3 +13,12 @@ export const phoneLength = (value) => {
 
     return 'Номер телефона должен быть полным';
 };
+
+export const email = (value) => {
+    const regExEmail = /.+@.+\..+/i;
+    if (value && regExEmail.test(value)) {
+        return undefined;
+    }
+
+    return 'Некорректный email адрес';
+};

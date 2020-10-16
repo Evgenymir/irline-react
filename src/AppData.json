@@ -12,8 +12,14 @@
   },
   "email": "glass@irline.ru",
   "phone": "+7 (812) 327 32 23",
-  "callBack": "Обратный звонок",
-  "order": "Заказать проект",
+  "callBack": {
+    "name": "Обратный звонок",
+    "link": "callBack"
+  },
+  "order": {
+    "name": "Заказать проект",
+    "link": "order"
+  },
   "menuItems": [
     {
       "id": 1,
@@ -41,19 +47,19 @@
     {
       "id": 1,
       "text": "С нами <span>комфортно</span>",
-      "link": "#order",
+      "link": "order",
       "linkText": "Заказать проект",
       "img": "./img/bg/main.jpg"
     }, {
       "id": 2,
       "text": "С нами <span>комфортно</span> <span>креативно</span>",
-      "link": "#order",
+      "link": "order",
       "linkText": "Заказать проект",
       "img": "./img/bg/slide2.jpg"
     }, {
       "id": 3,
       "text": "С нами <span>комфортно</span> <span>креативно</span> <span>практично</span>",
-      "link": "#order",
+      "link": "order",
       "linkText": "Заказать проект",
       "img": "./img/bg/gratitudes.jpg"
     }
@@ -176,7 +182,7 @@
     },
     "popupContent": {},
     "popupUiState": {
-      "isActive": null
+      "isActive": false
     }
   },
   "aboutCompany": {
@@ -336,6 +342,12 @@
     "link": {
       "text": "Политика конфиденциальности",
       "href": "#"
+    }
+  },
+  "UIState": {
+    "popupForm": {
+      "isActive": false,
+      "nameForm": ""
     }
   }
 }

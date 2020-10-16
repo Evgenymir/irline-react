@@ -45,9 +45,9 @@ const Header = ({
                         <Burger />
                     </div>
                     <div className="header__right">
-                        <Button link="#callBack" text={callBack} additionalClasses="header__callBack" />
+                        <Button link={callBack.link} text={callBack.name} additionalClasses="header__callBack" />
                         <a href={`tel:${phoneWithoutSpaces}`} className="header__phone">{phone}</a>
-                        <Button link="#order" text={order} additionalClasses="header__order button--red" />
+                        <Button link={order.link} text={order.name} additionalClasses="header__order button--red" />
                     </div>
                 </div>
             </div>
@@ -60,8 +60,14 @@ Header.defaultProps = {
         white: './img/logo.png',
         grey: './img/logoGrey.png',
     },
-    callBack: 'Кнопка',
-    order: 'Кнопка',
+    callBack: {
+        name: 'Кнопка',
+        link: 'callBack',
+    },
+    order: {
+        name: 'Кнопка',
+        link: 'order',
+    },
     phone: 'Телефон',
     menuItems: [{
         id: 0,
@@ -71,12 +77,9 @@ Header.defaultProps = {
 };
 
 Header.propTypes = {
-    logo: PropTypes.shape({
-        white: PropTypes.string,
-        grey: PropTypes.string,
-    }),
-    callBack: PropTypes.string,
-    order: PropTypes.string,
+    logo: PropTypes.objectOf(PropTypes.string),
+    callBack: PropTypes.objectOf(PropTypes.string),
+    order: PropTypes.objectOf(PropTypes.string),
     phone: PropTypes.string,
     menuItems: PropTypes.arrayOf(PropTypes.object),
 };

@@ -7,7 +7,7 @@ import AboutCompany from './pages/section/about-company/About-company.jsx';
 import GratefulClients from './pages/section/grateful-clients/Grateful-clients.jsx';
 import Contacts from './pages/section/contacts/Contacts.jsx';
 import Footer from './pages/footer/Footer.jsx';
-import Popup from './components/popup/Popup.jsx';
+import Popups from './components/popup/Popups.jsx';
 
 const App = () => (
     <>
@@ -18,7 +18,7 @@ const App = () => (
         <GratefulClients />
         <Contacts />
         <Footer />
-        <Popup />
+        <Popups />
     </>
 );
 

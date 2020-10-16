@@ -127,10 +127,23 @@ const GratefulClients = ({ title, items, imgLightbox }) => {
     );
 };
 
+PrevArrow.propTypes = {
+    className: PropTypes.string.isRequired,
+    style: PropTypes.objectOf(PropTypes.string).isRequired,
+    onClick: PropTypes.func.isRequired,
+};
+
+NextArrow.propTypes = {
+    className: PropTypes.string.isRequired,
+    style: PropTypes.objectOf(PropTypes.string).isRequired,
+    onClick: PropTypes.func.isRequired,
+};
+
 GratefulClients.defaultProps = {
     title: 'Нет заголовка',
     items: [],
     imagesBig: [],
+    imgLightbox: [],
 };
 
 GratefulClients.propTypes = {
@@ -141,6 +154,7 @@ GratefulClients.propTypes = {
         imgAlt: PropTypes.string,
     })),
     imagesBig: PropTypes.arrayOf(PropTypes.string),
+    imgLightbox: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default connect(mapStateToProps)(GratefulClients);
