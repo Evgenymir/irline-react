@@ -5,7 +5,7 @@ import SlickSlider from 'react-slick';
 import '../../../../node_modules/slick-carousel/slick/slick.scss';
 import './Grateful-clients.scss';
 import Lightbox from 'react-image-lightbox';
-import '../../../css/image-lightbox.scss';
+import '../../../assets/css/image-lightbox.scss';
 
 const PrevArrow = (props) => {
     const { className, style, onClick } = props;
