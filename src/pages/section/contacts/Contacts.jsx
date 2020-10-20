@@ -32,7 +32,7 @@ const Contacts = ({
 );
 
 Contacts.defaultProps = {
-    map: {},
+    map: null,
     address: 'Нет адреса',
     email: 'Нет email адреса',
     phone: 'Нет номера',

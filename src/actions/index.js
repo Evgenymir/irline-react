@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../api';
 
 const firstInitAppStarted = () => ({
     type: 'FIRST_INIT_APP_STARTED',
@@ -21,10 +21,12 @@ const firstInitAppFailure = (error) => ({
 export const firstInitApp = () => (dispatch) => {
     dispatch(firstInitAppStarted());
 
-    axios.get('./AppData.json')
+    api.get('/AppData.json')
         .then((response) => {
             const { data } = response;
-            dispatch(firstInitAppSuccess(data));
+            setTimeout(() => {
+                dispatch(firstInitAppSuccess(data));
+            }, 2000);
         })
         .catch((e) => {
             dispatch(firstInitAppFailure(e.message));

@@ -1,0 +1,53 @@
+@import '../../assets/css/mixins';
+@import '../../assets/css/variables';
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($black, 0.9);
+    backdrop-filter: blur(7px);
+    transition: opacity ease 1s;
+
+    &.preloader-animation-exit {
+        opacity: 1;
+    }
+
+    &.preloader-animation-exit-active {
+        opacity: 0;
+    }
+
+    &__circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 10px solid rgba($white, 0.5);
+        border-right-color: $red;
+        animation-name: rotation;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+
+        @include max-width-768 {
+            width: 40px;
+            height: 40px;
+            border-width: 5px;
+        }
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

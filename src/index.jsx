@@ -7,18 +7,15 @@ import { firstInitApp } from './actions/index';
 import rootReducers from './reducers';
 import App from './App.jsx';
 
-const composeEnhancers = typeof window === 'object'
-&& window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
-
-const enhancer = composeEnhancers(
-    applyMiddleware(thunk),
-);
-
+/* eslint-disable no-underscore-dangle */
 const store = createStore(
     rootReducers,
-    enhancer,
+    compose(
+        applyMiddleware(thunk),
+        window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f,
+    ),
 );
+/* eslint-enable */
 
 store.dispatch(firstInitApp());
 

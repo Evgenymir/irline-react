@@ -3,6 +3,10 @@ import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import './yandexMap.scss';
 
 const yandexMap = ({ data }) => {
+    if (data === null) {
+        return null;
+    }
+
     const mapState = {
         center: data.center,
         zoom: data.zoom,
