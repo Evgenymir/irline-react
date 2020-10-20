@@ -22,16 +22,16 @@ const mapStateToProps = ({ initState }) => {
 const MobileMenu = ({
     menuItems, callBack, order, phone, dispatch,
 }) => {
-    const [isActiveAnimation, setIsActiveAnimation] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
     const body = document.querySelector('body');
 
     useEffect(() => {
         body.classList.add('is-scroll-blocked');
-        setIsActiveAnimation(true);
+        setShowMenu(true);
     }, []);
 
     const handleCloseMenu = () => {
-        setIsActiveAnimation(false);
+        setShowMenu(false);
         setTimeout(() => {
             body.classList.remove('is-scroll-blocked');
             dispatch(closeMobileMenu());
@@ -40,9 +40,8 @@ const MobileMenu = ({
 
     return (
         <CSSTransition
-            in={isActiveAnimation}
+            in={showMenu}
             timeout={300}
-            unmountOnExit
             classNames="mobile-menu-animation"
         >
             <div className="mobile-menu-wrapper">

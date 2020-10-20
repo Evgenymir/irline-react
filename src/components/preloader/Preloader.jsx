@@ -22,7 +22,7 @@ const Preloader = ({ show }) => {
     return (
         <CSSTransition
             in={showPreloader}
-            timeout={300}
+            timeout={500}
             unmountOnExit
             classNames="preloader-animation"
         >

@@ -13,12 +13,13 @@ import Footer from './pages/footer/Footer.jsx';
 import Popup from './components/popup/Popup.jsx';
 import MobileMenu from './components/mobile-menu/Mobile-menu.jsx';
 
-const mapStateToProps = ({ initState }) => {
+const mapStateToProps = ({ initState, uiState }) => {
     const {
-        loading, UIState, callBack, order,
+        loading, callBack, order,
     } = initState;
+    const { mobileMenu, popupForm } = uiState;
 
-    if (UIState === undefined) {
+    if (loading) {
         return {
             isLoadData: loading,
         };
@@ -26,15 +27,15 @@ const mapStateToProps = ({ initState }) => {
 
     return {
         isLoadData: loading,
-        popup: UIState.popupForm,
+        popup: popupForm,
         callBack: callBack.name,
         order: order.name,
-        mobileMenu: UIState.mobileMenu,
+        isOpenMobileMenu: mobileMenu.isActive,
     };
 };
 
 const App = ({
-    isLoadData, popup, callBack, order, mobileMenu,
+    isLoadData, popup, callBack, order, isOpenMobileMenu,
 }) => {
     const title = popup.nameForm === 'callBack' ? callBack : order;
 
@@ -49,7 +50,7 @@ const App = ({
             <Contacts />
             <Footer />
             { popup.isActive && <Popup formName={popup.nameForm} title={title} /> }
-            { mobileMenu.isActive && <MobileMenu /> }
+            { isOpenMobileMenu && <MobileMenu /> }
         </>
     );
 };
@@ -61,9 +62,7 @@ App.defaultProps = {
     },
     callBack: 'Нет текста',
     order: 'Нет текста',
-    mobileMenu: {
-        isActive: false,
-    },
+    isOpenMobileMenu: false,
 };
 
 App.propTypes = {
@@ -74,7 +73,7 @@ App.propTypes = {
     }),
     callBack: PropTypes.string,
     order: PropTypes.string,
-    mobileMenu: PropTypes.objectOf(PropTypes.bool),
+    isOpenMobileMenu: PropTypes.bool,
 };
 
 export default connect(mapStateToProps)(App);

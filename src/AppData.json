@@ -179,10 +179,6 @@
         }
       },
       "allIds": ["content1", "content2", "content3", "content4", "content5", "content6", "content7", "content8"]
-    },
-    "popupContent": {},
-    "popupUiState": {
-      "isActive": false
     }
   },
   "aboutCompany": {
@@ -342,15 +338,6 @@
     "link": {
       "text": "Политика конфиденциальности",
       "href": "#"
-    }
-  },
-  "UIState": {
-    "popupForm": {
-      "isActive": false,
-      "nameForm": ""
-    },
-    "mobileMenu": {
-      "isActive": false
     }
   }
 }

@@ -5,26 +5,21 @@ import { connect } from 'react-redux';
 import PopupStages from '../../../components/popup/Popup-stage.jsx';
 import { stagesOfCooperationOpenPopup } from '../../../actions';
 
-const normalizeData = (data) => {
-    if (data === undefined) {
+const mapToStateProps = ({ initState, uiState }) => {
+    if (initState.loading) {
         return {};
     }
 
-    const {
-        title, stages, contents, popupContent, popupUiState,
-    } = data;
+    const { stagesOfCooperation: { title, stages, contents } } = initState;
+    const { stagesOfCooperation: { popupContent, isActivePopup } } = uiState;
+
     return {
         title,
         items: stages.allIds.map((item) => stages.byId[item]),
         contents: contents.allIds.map((item) => contents.byId[item]),
         popupContent,
-        isActivePopup: popupUiState.isActive,
+        isActivePopup,
     };
-};
-
-const mapToStateProps = ({ initState }) => {
-    const { stagesOfCooperation } = initState;
-    return normalizeData(stagesOfCooperation);
 };
 
 class StagesCooperation extends React.Component {
@@ -37,10 +32,6 @@ class StagesCooperation extends React.Component {
 
     renderItems() {
         const { items } = this.props;
-
-        if (items === undefined) {
-            return null;
-        }
 
         return (
             <div className="stages-cooperation__block">

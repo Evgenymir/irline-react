@@ -6,6 +6,20 @@ const initialState = {
     error: null,
 };
 
+const initialUIState = {
+    stagesOfCooperation: {
+        popupContent: {},
+        isActivePopup: false,
+    },
+    popupForm: {
+        isActive: false,
+        nameForm: '',
+    },
+    mobileMenu: {
+        isActive: false,
+    },
+};
+
 const initState = (state = initialState, action) => {
     switch (action.type) {
         case 'FIRST_INIT_APP_STARTED': {
@@ -29,91 +43,76 @@ const initState = (state = initialState, action) => {
                 error: action.payload.error,
             };
         }
-        case 'STAGES_OF_COOPERATION_OPEN_POPUP': {
-            const { content } = action.payload;
-            const { stagesOfCooperation } = state;
-            return {
-                ...state,
-                stagesOfCooperation: {
-                    ...stagesOfCooperation,
-                    popupContent: content,
-                    popupUiState: { isActive: true },
-                },
-            };
-        }
-        case 'STAGES_OF_COOPERATION_CLOSE_POPUP': {
-            const { stagesOfCooperation } = state;
-            return {
-                ...state,
-                stagesOfCooperation: {
-                    ...stagesOfCooperation,
-                    popupUiState: { isActive: false },
-                },
-            };
-        }
-        case 'OPEN_POPUP_FORM': {
-            const { UIState } = state;
-            const { name } = action.payload;
-            return {
-                ...state,
-                UIState: {
-                    ...UIState,
-                    popupForm: {
-                        isActive: true,
-                        nameForm: name,
-                    },
-                    mobileMenu: {
-                        isActive: false,
-                    },
-                },
-            };
-        }
-        case 'CLOSE_POPUP_FORM': {
-            const { UIState } = state;
-
-            return {
-                ...state,
-                UIState: {
-                    ...UIState,
-                    popupForm: {
-                        isActive: false,
-                        nameForm: '',
-                    },
-                },
-            };
-        }
-        case 'OPEN_MOBILE_MENU': {
-            const { UIState } = state;
-            return {
-                ...state,
-                UIState: {
-                    ...UIState,
-                    mobileMenu: {
-                        isActive: true,
-                    },
-                },
-            };
-        }
-        case 'CLOSE_MOBILE_MENU': {
-            const { UIState } = state;
-
-            return {
-                ...state,
-                UIState: {
-                    ...UIState,
-                    mobileMenu: {
-                        isActive: false,
-                    },
-                },
-            };
-        }
         default:
             return state;
     }
 };
 
+const uiState = (state = initialUIState, action) => {
+    switch (action.type) {
+        case 'OPEN_POPUP_FORM': {
+            const { name } = action.payload;
+            return {
+                ...state,
+                popupForm: {
+                    isActive: true,
+                    nameForm: name,
+                },
+            };
+        }
+        case 'CLOSE_POPUP_FORM': {
+            return {
+                ...state,
+                popupForm: {
+                    isActive: false,
+                    nameForm: '',
+                },
+            };
+        }
+        case 'STAGES_OF_COOPERATION_OPEN_POPUP': {
+            const { content } = action.payload;
+            return {
+                ...state,
+                stagesOfCooperation: {
+                    popupContent: content,
+                    isActivePopup: true,
+                },
+            };
+        }
+        case 'STAGES_OF_COOPERATION_CLOSE_POPUP': {
+            return {
+                ...state,
+                stagesOfCooperation: {
+                    popupContent: {},
+                    isActivePopup: false,
+                },
+            };
+        }
+        case 'OPEN_MOBILE_MENU': {
+            return {
+                ...state,
+                mobileMenu: {
+                    isActive: true,
+                },
+            };
+        }
+        case 'CLOSE_MOBILE_MENU': {
+            return {
+                ...state,
+                mobileMenu: {
+                    isActive: false,
+                },
+            };
+        }
+        default: {
+            return state;
+        }
+    }
+};
+
 const rootReducers = combineReducers({
     initState,
+    uiState,
     form: formReducer,
 });
 

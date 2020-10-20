@@ -10,24 +10,24 @@ import sendingData from '../../assets/js/sendingData';
 import ThanksBlock from '../forms/thanksBlock.jsx';
 
 const Popup = ({ formName, title, dispatch }) => {
-    const [isActiveAnimation, setIsActiveAnimation] = useState(false);
-    const [isSendForm, setIsSendForm] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
+    const [sendForm, setSendForm] = useState(false);
     const body = document.querySelector('body');
 
     useEffect(() => {
         body.classList.add('is-scroll-blocked');
-        setIsActiveAnimation(true);
+        setShowPopup(true);
     }, []);
 
     const handleSubmitForm = (values) => {
         const resultSending = sendingData(values);
         if (resultSending.status === 200) {
-            setIsSendForm(true);
+            setSendForm(true);
         }
     };
 
     const closePopup = () => {
-        setIsActiveAnimation(false);
+        setShowPopup(false);
         setTimeout(() => {
             body.classList.remove('is-scroll-blocked');
             dispatch(closePopupForm());
@@ -42,9 +42,8 @@ const Popup = ({ formName, title, dispatch }) => {
 
     return (
         <CSSTransition
-            in={isActiveAnimation}
+            in={showPopup}
             timeout={300}
-            unmountOnExit
             classNames="popup-animation"
         >
             <div className="popup-wrapper">
@@ -54,7 +53,7 @@ const Popup = ({ formName, title, dispatch }) => {
                         <span className="popup__close-line" />
                     </button>
                     <div className="popup__title">{title}</div>
-                    { !isSendForm ? renderForms[formName] : renderForms.thanks }
+                    { !sendForm ? renderForms[formName] : renderForms.thanks }
                 </div>
             </div>
         </CSSTransition>
