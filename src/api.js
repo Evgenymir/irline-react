@@ -1,10 +1,7 @@
 import axios from 'axios';
-import path from 'path';
-
-console.log(path.dirname());
 
 const api = axios.create({
-    baseURL: '/irline/build/',
+    baseURL: '/',
     timeout: 1000 * 5,
 });
 
