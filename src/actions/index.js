@@ -21,12 +21,10 @@ const firstInitAppFailure = (error) => ({
 export const firstInitApp = () => (dispatch) => {
     dispatch(firstInitAppStarted());
 
-    api.get('/AppData.json')
+    api.get('./AppData.json')
         .then((response) => {
             const { data } = response;
-            setTimeout(() => {
-                dispatch(firstInitAppSuccess(data));
-            }, 2000);
+            dispatch(firstInitAppSuccess(data));
         })
         .catch((e) => {
             dispatch(firstInitAppFailure(e.message));
