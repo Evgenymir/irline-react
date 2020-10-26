@@ -4,6 +4,7 @@
 .footer {
     background-color: $white;
     padding: 75px 0 100px;
+    margin-top: auto;
 
     @include max-width-1280 {
         padding: 50px 0;

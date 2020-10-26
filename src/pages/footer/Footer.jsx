@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './Footer.scss';
 
 const mapStateToProps = ({ initState }) => {
@@ -21,7 +22,7 @@ const Footer = ({ menuItems, copyright }) => (
                         <ul>
                             { items.map(({ text, link }) => (
                                 <li key={text}>
-                                    <a href={link}>{text}</a>
+                                    <Link to={link}>{text}</Link>
                                 </li>
                             )) }
                         </ul>
@@ -31,7 +32,9 @@ const Footer = ({ menuItems, copyright }) => (
                     <div className="footer__item-copy">
                         <p>{copyright.year}</p>
                         <p>{copyright.text}</p>
-                        <a href={copyright.link.href} className="footer__item-policy">{copyright.link.text}</a>
+                        <Link to={copyright.link.href} className="footer__item-policy">
+                            {copyright.link.text}
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -2,16 +2,18 @@ import React from 'react';
 import './App.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import Preloader from './components/preloader/Preloader.jsx';
 import Header from './pages/header/Header.jsx';
-import MainScreen from './pages/section/main-screen/Main-screen.jsx';
-import StagesCooperation from './pages/section/stages-cooperation/Stages-cooperation.jsx';
-import AboutCompany from './pages/section/about-company/About-company.jsx';
-import GratefulClients from './pages/section/grateful-clients/Grateful-clients.jsx';
-import Contacts from './pages/section/contacts/Contacts.jsx';
 import Footer from './pages/footer/Footer.jsx';
 import Popup from './components/popup/Popup.jsx';
 import MobileMenu from './components/mobile-menu/Mobile-menu.jsx';
+import MainPage from './pages/main/Main.jsx';
+import AboutPage from './pages/about/About.jsx';
+import ProductsPage from './pages/products/Products.jsx';
+import ServicesPage from './pages/services/Services.jsx';
+import ProjectsPage from './pages/projects/Projects.jsx';
+import ContactPage from './pages/contact/Contact.jsx';
 
 const mapStateToProps = ({ initState, uiState }) => {
     const {
@@ -37,17 +39,21 @@ const mapStateToProps = ({ initState, uiState }) => {
 const App = ({
     isLoadData, popup, callBack, order, isOpenMobileMenu,
 }) => {
+    const location = useLocation();
     const title = popup.nameForm === 'callBack' ? callBack : order;
 
     return (
         <>
             <Preloader show={isLoadData} />
-            <Header />
-            <MainScreen />
-            <StagesCooperation />
-            <AboutCompany />
-            <GratefulClients />
-            <Contacts />
+            <Header innerPage={location.pathname !== '/'} />
+            <Switch location={location}>
+                <Route path="/" exact render={(props) => <MainPage {...props} />} />
+                <Route path="/about" render={(props) => <AboutPage {...props} />} />
+                <Route path="/products" render={(props) => <ProductsPage {...props} />} />
+                <Route path="/services" render={(props) => <ServicesPage {...props} />} />
+                <Route path="/projects" render={(props) => <ProjectsPage {...props} />} />
+                <Route path="/contact" render={(props) => <ContactPage {...props} />} />
+            </Switch>
             <Footer />
             { popup.isActive && <Popup formName={popup.nameForm} title={title} /> }
             { isOpenMobileMenu && <MobileMenu /> }

@@ -24,23 +24,23 @@
     {
       "id": 1,
       "title": "О компании",
-      "link": "#"
+      "link": "/about"
     }, {
       "id": 2,
       "title": "Продукция",
-      "link": "#"
+      "link": "/products"
     }, {
       "id": 3,
       "title": "Услуги",
-      "link": "#"
+      "link": "/services"
     }, {
       "id": 4,
       "title": "Проекты",
-      "link": "#"
+      "link": "/projects"
     }, {
       "id": 5,
       "title": "Контакты",
-      "link": "#"
+      "link": "/contact"
     }
   ],
   "mainSlider": [
@@ -267,19 +267,19 @@
       "items": [
         {
           "text": "О компании",
-          "link": "#"
+          "link": "/about"
         }, {
           "text": "Продукция",
-          "link": "#"
+          "link": "/products"
         }, {
           "text": "Услуги",
-          "link": "#"
+          "link": "/services"
         }, {
           "text": "Проекты",
-          "link": "#"
+          "link": "/projects"
         }, {
           "text": "Контакты",
-          "link": "#"
+          "link": "/contact"
         }
       ]
     },
@@ -288,22 +288,13 @@
       "items": [
         {
           "text": "Коридорные зоны",
-          "link": "#"
+          "link": "/corridor-zones"
         }, {
           "text": "Холлы",
-          "link": "#"
-        }, {
-          "text": "Зоны ресепшн",
-          "link": "#"
-        }, {
-          "text": "Зона отдыха",
-          "link": "#"
-        }, {
-          "text": "Шкафы, нишы",
-          "link": "#"
+          "link": "/halls"
         }, {
           "text": "Прочее",
-          "link": "#"
+          "link": "/other"
         }
       ]
     },
@@ -312,22 +303,13 @@
       "items": [
         {
           "text": "Бизнес-центры",
-          "link": "#"
+          "link": "/business"
         }, {
           "text": "Производства",
-          "link": "#"
-        }, {
-          "text": "Торговые центры",
-          "link": "#"
-        }, {
-          "text": "Гос предприятия",
-          "link": "#"
-        }, {
-          "text": "Мед учреждения",
-          "link": "#"
+          "link": "/production"
         }, {
           "text": "Другие проекты",
-          "link": "#"
+          "link": "/other-projects"
         }
       ]
     }
@@ -337,7 +319,7 @@
     "text": "Все права защищены.",
     "link": {
       "text": "Политика конфиденциальности",
-      "href": "#"
+      "href": "/policy"
     }
   }
 }

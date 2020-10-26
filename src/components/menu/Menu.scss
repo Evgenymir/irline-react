@@ -52,6 +52,10 @@
             border-color: $white;
         }
 
+        &.is-active {
+            border-color: $grey;
+        }
+
         @include max-width-1500 {
             font-size: 1.125rem;
         }

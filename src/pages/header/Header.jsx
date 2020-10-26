@@ -24,27 +24,38 @@ const mapStateToProps = ({ initState }) => {
 };
 
 const Header = ({
-    logo, callBack, order, phone, menuItems, dispatch,
+    logo, callBack, order, phone, menuItems, dispatch, innerPage,
 }) => {
     const [scroll, setScroll] = useState(false);
 
+    const checkAndSetScroll = () => {
+        const isScroll = window.pageYOffset >= 70;
+        setScroll(isScroll);
+    };
+
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            const isScroll = window.pageYOffset >= 70;
-            setScroll(isScroll);
-        });
-    }, [scroll]);
+        if (innerPage) {
+            setScroll(false);
+            return;
+        }
+
+        window.addEventListener('scroll', checkAndSetScroll);
+        // eslint-disable-next-line consistent-return
+        return () => {
+            window.removeEventListener('scroll', checkAndSetScroll);
+        };
+    }, [innerPage]);
 
     const handleOpenMobileMenu = () => {
         dispatch(openMobileMenu());
     };
 
     return (
-        <header className={`header ${scroll ? 'is-scroll' : ''}`}>
+        <header className={`header ${innerPage || scroll ? 'header--white' : ''}`}>
             <div className="container">
                 <div className="header__wrap">
                     <div className="header__left">
-                        <Logo img={!scroll ? logo.white : logo.grey} />
+                        <Logo img={!scroll && !innerPage ? logo.white : logo.grey} />
                         <Menu menu={menuItems} />
                         <Burger openMenu={handleOpenMobileMenu} />
                     </div>
@@ -87,6 +98,7 @@ Header.propTypes = {
     phone: PropTypes.string,
     menuItems: PropTypes.arrayOf(PropTypes.object),
     dispatch: PropTypes.func.isRequired,
+    innerPage: PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps)(Header);

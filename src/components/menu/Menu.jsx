@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Menu.scss';
+import { NavLink } from 'react-router-dom';
 
 const Menu = ({ menu }) => {
     if (menu === undefined) {
@@ -12,7 +13,13 @@ const Menu = ({ menu }) => {
             <ul className="menu__list">
                 {menu.map(({ id, title, link }) => (
                     <li className="menu__list-item" key={id}>
-                        <a href={link} className="menu__list-link">{title}</a>
+                        <NavLink
+                            to={link}
+                            className="menu__list-link"
+                            activeClassName="is-active"
+                        >
+                            {title}
+                        </NavLink>
                     </li>
                 ))}
             </ul>

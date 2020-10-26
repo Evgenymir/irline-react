@@ -101,6 +101,14 @@ img.j-image-polyfill {
 // Класс для показа блока
 .show {display: block;}
 
+#react-root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 .container {
     max-width: $containerWidth;
     margin: 0 auto;
