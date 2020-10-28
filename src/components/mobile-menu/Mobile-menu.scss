@@ -138,6 +138,10 @@
         @include max-width-480 {
             font-size: rem(16px);
         }
+
+        &.is-active {
+            color: $black;
+        }
     }
 
     &__links {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import Button from '../button/Button.jsx';
 import phoneWithoutSpaces from '../../assets/js/phoneWithoutSpaces';
@@ -53,9 +54,14 @@ const MobileMenu = ({
                     <ul className="mobile-menu__list">
                         { menuItems.map(({ id, title, link }) => (
                             <li className="mobile-menu__list-item" key={id}>
-                                <a href={link} className="mobile-menu__list-link">
+                                <NavLink
+                                    to={link}
+                                    className="mobile-menu__list-link"
+                                    activeClassName="is-active"
+                                    onClick={handleCloseMenu}
+                                >
                                     {title}
-                                </a>
+                                </NavLink>
                             </li>
                         )) }
                     </ul>
