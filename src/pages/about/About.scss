@@ -1,0 +1,125 @@
+@import '../../assets/css/mixins';
+@import '../../assets/css/variables';
+
+.about-page {
+    background-color: $white;
+    padding-bottom: 75px;
+
+    @include max-width-768 {
+        padding-bottom: 65px;
+    }
+
+    @include max-width-480 {
+        padding-bottom: 20px;
+    }
+
+    &__content {
+        @include flex();
+
+        @include max-width-1280 {
+            display: block;
+        }
+    }
+
+    &__left {
+        width: 50%;
+
+        @include max-width-1280 {
+            width: 100%;
+        }
+    }
+
+    &__right {
+        width: 50%;
+
+        @include max-width-1280 {
+            width: 100%;
+            padding-top: 40px;
+        }
+
+        @include max-width-992 {
+            padding-top: 30px;
+        }
+
+        @include max-width-768 {
+            padding-top: 20px;
+        }
+    }
+
+    &__title {
+        font-size: rem(36px);
+        color: $red;
+        line-height: 1.2;
+        margin-bottom: 40px;
+
+        @include max-width-1280 {
+            max-width: 600px;
+        }
+
+        @include max-width-992 {
+            max-width: 500px;
+            font-size: rem(30px);
+        }
+
+        @include max-width-768 {
+            max-width: 400px;
+            font-size: rem(24px);
+            margin-bottom: 20px;
+        }
+    }
+
+    &__desc {
+        font-size: rem(24px);
+        color: $text;
+
+        @include max-width-992 {
+            font-size: rem(20px);
+        }
+
+        @include max-width-768 {
+            font-size: rem(16px);
+        }
+
+        p {
+            margin-bottom: 40px;
+
+            @include max-width-992 {
+                margin-bottom: 20px;
+            }
+
+            @include max-width-768 {
+                margin-bottom: 15px;
+            }
+        }
+
+        a {
+            color: $red;
+
+            &:hover {
+                border-color: $red;
+            }
+        }
+    }
+
+    &__certificate {
+        @include flex(space-around);
+        margin-left: -1%;
+
+        a {
+            display: block;
+            width: 24%;
+            margin-left: 1%;
+            border: none;
+            margin-bottom: 10px;
+
+            @include max-width-768 {
+                width: 32%;
+            }
+        }
+
+        img {
+            width: 100%;
+            margin-bottom: -5px;
+        }
+    }
+}

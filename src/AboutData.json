@@ -1,0 +1,33 @@
+{
+  "aboutPage": {
+    "title": "Основной принцип работы Ирлайн  –  учет потребностей каждого заказчика.",
+    "text": "За долгое время работы мы накопили огромный опыт в реализации проектов различной степени сложности.  Отлаженная система бизнес-процессов делает работу с нами максимально удобной и эффективной для каждого клиента.",
+    "moreDetails": {
+      "text": "Подробнее",
+      "link": "https://www.irline.ru/"
+    },
+    "certificate": {
+      "byId": {
+        "certificate1": {
+          "id": 1,
+          "img": "./img/about/certificate.jpg",
+          "imgBig": "./img/about/certificate.jpg",
+          "imgAlt": "Сертификат"
+        },
+        "certificate2": {
+          "id": 2,
+          "img": "./img/about/certificate.jpg",
+          "imgBig": "./img/about/certificate.jpg",
+          "imgAlt": "Сертификат"
+        },
+        "certificate3": {
+          "id": 3,
+          "img": "./img/about/certificate2.jpg",
+          "imgBig": "./img/about/certificate2.jpg",
+          "imgAlt": "Сертификат"
+        }
+      },
+      "allIds": ["certificate1", "certificate2", "certificate3"]
+    }
+  }
+}

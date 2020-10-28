@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SlickSlider from 'react-slick';
 import '../../../../node_modules/slick-carousel/slick/slick.scss';
 import './Grateful-clients.scss';
-import Lightbox from 'react-image-lightbox';
-import '../../../assets/css/image-lightbox.scss';
+import ModalLightBox from '../../../components/light-box/Light-box.jsx';
+import { openModalLightBox } from '../../../actions/index';
 
 const PrevArrow = (props) => {
     const { className, style, onClick } = props;
@@ -57,33 +57,34 @@ const sliderSettings = {
     ],
 };
 
-const normalizeData = (data) => {
-    if (data === undefined) {
+const mapStateToProps = ({ initState, uiState }) => {
+    const { gratefulClients } = initState;
+
+    if (!gratefulClients) {
         return {};
     }
 
-    const { gratitudes } = data;
+    const { gratitudes } = gratefulClients;
+    const { lightBox } = uiState;
 
     return {
-        title: data.title,
+        title: gratefulClients.title,
         items: gratitudes.allIds.map((item) => gratitudes.byId[item]),
-        imgLightbox: gratitudes.allIds.map((item) => gratitudes.byId[item].imgBig),
+        imagesForLightBox: gratitudes.allIds.map((item) => gratitudes.byId[item].imgBig),
+        lightBox,
     };
 };
 
-const mapStateToProps = ({ initState }) => {
-    const { gratefulClients } = initState;
-    return normalizeData(gratefulClients);
-};
-
-const GratefulClients = ({ title, items, imgLightbox }) => {
-    const [isOpenLightbox, setIsOpenLightbox] = useState(false);
-    const [photoIndex, setPhotoIndex] = useState(0);
-
+const GratefulClients = ({
+    title, items, imagesForLightBox, lightBox, dispatch,
+}) => {
     const openLightbox = (index) => (e) => {
         e.preventDefault();
-        setIsOpenLightbox(true);
-        setPhotoIndex(index);
+        const data = {
+            index,
+            images: imagesForLightBox,
+        };
+        dispatch(openModalLightBox(data));
     };
 
     return (
@@ -106,20 +107,10 @@ const GratefulClients = ({ title, items, imgLightbox }) => {
                         </SlickSlider>
                     </div>
                 </div>
-                { isOpenLightbox && (
-                    <Lightbox
-                        mainSrc={imgLightbox[photoIndex]}
-                        nextSrc={imgLightbox[(photoIndex + 1) % imgLightbox.length]}
-                        prevSrc={imgLightbox[
-                            (photoIndex + imgLightbox.length - 1) % imgLightbox.length
-                        ]}
-                        onCloseRequest={() => setIsOpenLightbox(false)}
-                        onMovePrevRequest={() => setPhotoIndex(
-                            (photoIndex + imgLightbox.length - 1) % imgLightbox.length,
-                        )}
-                        onMoveNextRequest={() => setPhotoIndex(
-                            (photoIndex + 1) % imgLightbox.length,
-                        )}
+                { lightBox.isOpen && (
+                    <ModalLightBox
+                        items={lightBox.items}
+                        currentItem={lightBox.currentItem}
                     />
                 ) }
             </div>
@@ -142,8 +133,12 @@ NextArrow.propTypes = {
 GratefulClients.defaultProps = {
     title: 'Нет заголовка',
     items: [],
-    imagesBig: [],
-    imgLightbox: [],
+    imagesForLightBox: [],
+    lightBox: {
+        isOpen: false,
+        items: [],
+        currentItem: 0,
+    },
 };
 
 GratefulClients.propTypes = {
@@ -153,8 +148,13 @@ GratefulClients.propTypes = {
         imgBig: PropTypes.string,
         imgAlt: PropTypes.string,
     })),
-    imagesBig: PropTypes.arrayOf(PropTypes.string),
-    imgLightbox: PropTypes.arrayOf(PropTypes.string),
+    imagesForLightBox: PropTypes.arrayOf(PropTypes.string),
+    lightBox: PropTypes.shape({
+        isOpen: PropTypes.bool,
+        items: PropTypes.arrayOf(PropTypes.string),
+        currentItem: PropTypes.number,
+    }),
+    dispatch: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(GratefulClients);

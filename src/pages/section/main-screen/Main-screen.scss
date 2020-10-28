@@ -5,6 +5,30 @@
     height: 100vh;
     background: #cecece;
 
+    &--inner {
+        height: auto;
+
+        .main-screen__slider-item {
+            height: auto;
+            padding-top: 180px;
+            padding-bottom: 140px;
+
+            @include max-width-768 {
+                padding-top: 120px;
+                padding-bottom: 100px;
+            }
+        }
+
+        .main-screen__slider-item-title {
+            margin-bottom: 0;
+        }
+
+        .slick-arrow {
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+
     &__wrap {
         position: relative;
         z-index: 1;

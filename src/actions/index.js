@@ -60,3 +60,30 @@ export const openMobileMenu = () => ({
 export const closeMobileMenu = () => ({
     type: 'CLOSE_MOBILE_MENU',
 });
+
+export const openModalLightBox = (data) => ({
+    type: 'OPEN_MODAL_LIGHT_BOX',
+    payload: data,
+});
+
+export const closeModalLightBox = () => ({
+    type: 'CLOSE_MODAL_LIGHT_BOX',
+});
+
+export const startGettingPageContent = () => ({
+    type: 'START_GETTING_PAGE_CONTENT',
+});
+
+export const getPageContentSuccess = (data) => ({
+    type: 'GET_PAGE_CONTENT_SUCCESS',
+    payload: {
+        data,
+    },
+});
+
+export const getPageContentFailure = (error) => ({
+    type: 'GET_PAGE_CONTENT_FAILURE',
+    payload: {
+        error,
+    },
+});

@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import PopupStages from '../../../components/popup/Popup-stage.jsx';
 import { stagesOfCooperationOpenPopup } from '../../../actions';
 
-const mapToStateProps = ({ initState, uiState }) => {
-    if (initState.loading) {
+const mapToStateProps = ({ loading, initState, uiState }) => {
+    if (loading.isLoad) {
         return {};
     }
 

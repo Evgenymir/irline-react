@@ -53,8 +53,8 @@ const mapStateToProps = ({ initState }) => {
     };
 };
 
-const MainScreen = ({ sliderItems }) => (
-    <section className="main-screen">
+const MainScreen = ({ sliderItems, innerPage }) => (
+    <section className={`main-screen ${innerPage && 'main-screen--inner'}`}>
         <div className="main-screen__wrap">
             <SlickSlider className="main-screen__slider" {...sliderSettings}>
                 { sliderItems.map(({
@@ -63,7 +63,7 @@ const MainScreen = ({ sliderItems }) => (
                     <div key={id}>
                         <div className="main-screen__slider-item" style={{ backgroundImage: `url(${img})` }}>
                             <div className="main-screen__slider-item-title" dangerouslySetInnerHTML={{ __html: text }} />
-                            <Button link={link} text={linkText} additionalClasses="main-screen__slider-item-link button--red" />
+                            { !innerPage && <Button link={link} text={linkText} additionalClasses="main-screen__slider-item-link button--red" /> }
                         </div>
                     </div>
                 )) }
@@ -86,6 +86,7 @@ NextArrow.propTypes = {
 
 MainScreen.defaultProps = {
     sliderItems: [],
+    innerPage: false,
 };
 
 MainScreen.propTypes = {
@@ -96,6 +97,7 @@ MainScreen.propTypes = {
         linkText: PropTypes.string.isRequired,
         img: PropTypes.string.isRequired,
     })),
+    innerPage: PropTypes.bool,
 };
 
 export default connect(mapStateToProps)(MainScreen);

@@ -15,20 +15,21 @@ import ServicesPage from './pages/services/Services.jsx';
 import ProjectsPage from './pages/projects/Projects.jsx';
 import ContactPage from './pages/contact/Contact.jsx';
 
-const mapStateToProps = ({ initState, uiState }) => {
+const mapStateToProps = ({ loading, initState, uiState }) => {
     const {
-        loading, callBack, order,
+        callBack, order,
     } = initState;
+    const { isLoad, error } = loading;
     const { mobileMenu, popupForm } = uiState;
 
-    if (loading) {
+    if (isLoad) {
         return {
-            isLoadData: loading,
+            isLoadData: isLoad,
         };
     }
 
     return {
-        isLoadData: loading,
+        isLoadData: isLoad,
         popup: popupForm,
         callBack: callBack.name,
         order: order.name,

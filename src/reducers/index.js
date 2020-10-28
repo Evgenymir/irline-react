@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
 const initialState = {
-    loading: false,
+    isLoad: false,
     error: null,
 };
 
@@ -18,29 +18,71 @@ const initialUIState = {
     mobileMenu: {
         isActive: false,
     },
+    lightBox: {
+        isOpen: false,
+        items: [],
+        currentItem: 0,
+    },
 };
 
-const initState = (state = initialState, action) => {
+const loading = (state = initialState, action) => {
     switch (action.type) {
         case 'FIRST_INIT_APP_STARTED': {
             return {
                 ...state,
-                loading: true,
+                isLoad: true,
             };
         }
+        case 'FIRST_INIT_APP_SUCCESS': {
+            return {
+                ...state,
+                isLoad: false,
+            };
+        }
+        case 'FIRST_INIT_APP_FAILURE': {
+            return {
+                ...state,
+                isLoad: false,
+                error: action.payload.error,
+            };
+        }
+        case 'START_GETTING_PAGE_CONTENT': {
+            return {
+                ...state,
+                isLoad: true,
+            };
+        }
+        case 'GET_PAGE_CONTENT_SUCCESS': {
+            return {
+                ...state,
+                isLoad: false,
+            };
+        }
+        case 'GET_PAGE_CONTENT_FAILURE': {
+            return {
+                ...state,
+                isLoad: false,
+                error: action.payload.error,
+            };
+        }
+        default: {
+            return state;
+        }
+    }
+};
+
+const initState = (state = {}, action) => {
+    switch (action.type) {
         case 'FIRST_INIT_APP_SUCCESS': {
             const data = action.payload;
             return {
                 ...state,
-                loading: false,
                 ...data,
             };
         }
         case 'FIRST_INIT_APP_FAILURE': {
             return {
                 ...state,
-                loading: false,
-                error: action.payload.error,
             };
         }
         default:
@@ -104,6 +146,43 @@ const uiState = (state = initialUIState, action) => {
                 },
             };
         }
+        case 'OPEN_MODAL_LIGHT_BOX': {
+            const { index, images } = action.payload;
+
+            return {
+                ...state,
+                lightBox: {
+                    isOpen: true,
+                    items: images,
+                    currentItem: index,
+                },
+            };
+        }
+        case 'CLOSE_MODAL_LIGHT_BOX': {
+            return {
+                ...state,
+                lightBox: {
+                    isOpen: false,
+                    items: [],
+                    currentItem: 0,
+                },
+            };
+        }
+        default: {
+            return state;
+        }
+    }
+};
+
+const innerContent = (state = {}, action) => {
+    switch (action.type) {
+        case 'GET_PAGE_CONTENT_SUCCESS': {
+            const { data } = action.payload;
+            return {
+                ...state,
+                ...data,
+            };
+        }
         default: {
             return state;
         }
@@ -111,9 +190,11 @@ const uiState = (state = initialUIState, action) => {
 };
 
 const rootReducers = combineReducers({
+    loading,
     initState,
     uiState,
     form: formReducer,
+    innerContent,
 });
 
 export default rootReducers;
