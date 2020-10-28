@@ -5,7 +5,7 @@ import MainScreen from '../section/main-screen/Main-screen.jsx';
 import AboutCompany from '../section/about-company/About-company.jsx';
 import GratefulClients from '../section/grateful-clients/Grateful-clients.jsx';
 import './About.scss';
-import api from '../../api';
+import api from '../../assets/js/api';
 import {
     startGettingPageContent,
     getPageContentSuccess,

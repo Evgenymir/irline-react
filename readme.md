@@ -1,19 +1,26 @@
-## Для работы надо установить
-* nodejs
-* npm
-* webpack
-* gulp
+## Проект IRLINE
 
-## Старт работы
+[Demo проекта](https://evgenymir.github.io/irline-react/build/index.html)
+
+## Описание
+Перенос верстки проекта на React
+
+## Используемые технологии
 ```
-npm install
-npm run dev - режим разработки
-npm run buid - сборка проекта в продакшн
+ React / Readux
+ HTML5 / CSS3 / SCSS / BEM / Responsive Layout
+ JavaScript
 ```
 
-Поднимается локальный сервер - `localhost:3000`
+## Дополнительные библиотеки
+```
+ Redux Thunk
+ Redux Form
+ React Router
+ React Transition Group
+ PropTypes
+ Axios
+```
 
-Страницы доступны - `localhost:3000/`
-
-## Структура папок
-Все файлы лежат в папке `src` и компилятся в `build`
+## JSON файлы
+Используются: [InitialData](https://evgenymir.github.io/irline-react/build/AppData.json), [AboutData](https://evgenymir.github.io/irline-react/build/AboutData.json)

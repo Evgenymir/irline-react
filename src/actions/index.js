@@ -1,4 +1,4 @@
-import api from '../api';
+import api from '../assets/js/api';
 
 const firstInitAppStarted = () => ({
     type: 'FIRST_INIT_APP_STARTED',
