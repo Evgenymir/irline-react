@@ -23,18 +23,18 @@ const mapStateToProps = ({ innerContent }) => {
     }
 
     const {
-        title, text, moreDetails, certificate,
+        title, text, moreDetails, certificates,
     } = aboutPage;
 
-    const certificates = certificate.allIds.map((item) => certificate.byId[item]);
+    const normalizeCertificates = certificates.allIds.map((item) => certificates.byId[item]);
 
     return {
         hasContent: true,
         title,
         text,
         moreDetails,
-        certificates,
-        imagesForLightBox: certificates.map((item) => item.imgBig),
+        certificates: normalizeCertificates,
+        imagesForLightBox: normalizeCertificates.map((item) => item.imgBig),
     };
 };
 
