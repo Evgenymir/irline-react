@@ -15,7 +15,7 @@ const Preloader = ({ show }) => {
             setTimeout(() => {
                 body.classList.remove('is-scroll-blocked');
                 setShowPreloader(false);
-            }, 1000);
+            }, 500);
         }
     }, [show]);
 

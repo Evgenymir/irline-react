@@ -1,0 +1,16 @@
+{
+  "title": "Стационарные перегородки",
+  "description": "Популярный вариант организации рабочих мест — установка стеклянных перегородок, стеклянные перегородки являются стационарными. Это позволяет экономить на освещении, облегчает контроль и охрану помещений, формирует стильную офисную эстетику. «Ирлайн» создает готовые решения для вашего офиса в разных вариантах.",
+  "images": {
+    "big": [
+      "./img/productCardSlide.jpg",
+      "./img/productCardSlide2.jpg",
+      "./img/productCardSlide3.jpg"
+    ],
+    "small": [
+      "./img/productCardSlideSmall1.jpg",
+      "./img/productCardSlideSmall2.jpg",
+      "./img/productCardSlideSmall3.jpg"
+    ]
+  }
+}

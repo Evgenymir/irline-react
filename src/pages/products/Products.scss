@@ -1,0 +1,102 @@
+@import '../../assets/css/mixins';
+@import '../../assets/css/variables';
+
+.product-page {
+    &__list {
+        @include flex(center);
+        margin-left: -1%;
+
+        @media screen and (max-width: 368px) {
+            display: block;
+            margin-left: 0;
+        }
+    }
+
+    &__item {
+        display: block;
+        width: 19%;
+        margin-left: 1%;
+        margin-bottom: 1%;
+
+        @include max-width-1600 {
+            width: 24%;
+        }
+
+        @include max-width-768 {
+            width: 49%;
+        }
+
+        @media screen and (max-width: 368px) {
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 10px;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            .product-page__item-title-arrow {
+                right: 2%;
+            }
+
+            .product-page__item-img {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    &__item-title {
+        position: relative;
+        @include flex(center);
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        font-size: rem(19px);
+        color: #fff;
+        line-height: 1.2;
+        text-align: center;
+        background-color: $grey;
+        border: none;
+        padding: 0 13%;
+
+        @include max-width-1280 {
+            font-size: 1rem;
+            padding: 0 15%;
+        }
+
+        @include max-width-992 {
+            height: 75px;
+            padding: 0 3%;
+        }
+    }
+
+    &__item-title-arrow {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        width: 25px;
+        height: 13px;
+        background-size: contain;
+        background-position: top center;
+        background-repeat: no-repeat;
+        margin-top: -6px;
+        transition: all ease 0.5s;
+
+        @include max-width-992 {
+            display: none;
+        }
+    }
+
+    &__item-img {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            margin-bottom: -5px;
+            transition: transform ease 0.8s;
+        }
+    }
+}

@@ -87,3 +87,17 @@ export const getPageContentFailure = (error) => ({
         error,
     },
 });
+
+export const setCurrentProductIdCard = (id) => ({
+    type: 'SET_CURRENT_PRODUCT_ID_CARD',
+    payload: {
+        id,
+    },
+});
+
+export const getProductsSuccess = (data) => ({
+    type: 'GET_PRODUCTS_SUCCESS',
+    payload: {
+        data,
+    },
+});

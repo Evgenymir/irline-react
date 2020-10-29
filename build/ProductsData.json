@@ -1,0 +1,60 @@
+{
+  "productsPage": {
+    "title": "Продукция",
+    "products": {
+      "byId": {
+        "product1": {
+          "id": 1,
+          "title": "Стационарные перегородки",
+          "img": "./img/products/product1.jpg"
+        },
+        "product2": {
+          "id": 2,
+          "title": "Стеклянные перегородки",
+          "img": "./img/products/product2.jpg"
+        },
+        "product3": {
+          "id": 3,
+          "title": "Офисные перегородки",
+          "img": "./img/products/product3.jpg"
+        },
+        "product4": {
+          "id": 4,
+          "title": "Облицовка стен",
+          "img": "./img/products/product4.jpg"
+        },
+        "product5": {
+          "id": 5,
+          "title": "Беспрофильные перегородки",
+          "img": "./img/products/product5.jpg"
+        },
+        "product6": {
+          "id": 6,
+          "title": "Двери",
+          "img": "./img/products/product6.jpg"
+        },
+        "product7": {
+          "id": 7,
+          "title": "Стеклянные ограждения и козырьки",
+          "img": "./img/products/product7.jpg"
+        },
+        "product8": {
+          "id": 8,
+          "title": "Сантехнические и душевые перегородки",
+          "img": "./img/products/product8.jpg"
+        },
+        "product9": {
+          "id": 9,
+          "title": "Раздвижные перегородки",
+          "img": "./img/products/product9.jpg"
+        },
+        "product10": {
+          "id": 10,
+          "title": "Мобильные перегородки",
+          "img": "./img/products/product1.jpg"
+        }
+      },
+      "allIds": ["product1", "product2", "product3", "product4", "product5", "product6", "product7", "product8", "product9", "product10"]
+    }
+  }
+}

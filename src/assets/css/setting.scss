@@ -109,6 +109,30 @@ img.j-image-polyfill {
     justify-content: flex-start;
 }
 
+.page-wrapper {
+    background-color: $white;
+    margin-top: 70px;
+    padding-top: 60px;
+
+    @include max-width-1280 {
+        margin-top: 61px;
+        padding-top: 40px;
+    }
+
+    @media screen and (max-width: 1180px) {
+        margin-top: 86px;
+    }
+
+    @include max-width-992 {
+        margin-top: 61px;
+    }
+
+    @include max-width-768 {
+        margin-top: 45px;
+        padding-top: 25px;
+    }
+}
+
 .container {
     max-width: $containerWidth;
     margin: 0 auto;
