@@ -15,6 +15,7 @@ import ProductsCard from './pages/products-card/Products-card.jsx';
 import ServicesPage from './pages/services/Services.jsx';
 import ProjectsPage from './pages/projects/Projects.jsx';
 import ContactPage from './pages/contact/Contact.jsx';
+import Page404 from './pages/404/404.jsx';
 
 const mapStateToProps = ({ loading, initState, uiState }) => {
     const {
@@ -56,6 +57,7 @@ const App = ({
                 <Route path="/services" render={(props) => <ServicesPage {...props} />} />
                 <Route path="/projects" render={(props) => <ProjectsPage {...props} />} />
                 <Route path="/contact" render={(props) => <ContactPage {...props} />} />
+                <Route render={() => <Page404 />} />
             </Switch>
             <Footer />
             { popup.isActive && <Popup formName={popup.nameForm} title={title} /> }

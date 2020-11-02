@@ -1,0 +1,43 @@
+@import '../../assets/css/mixins';
+@import '../../assets/css/variables';
+
+.page404 {
+    text-align: center;
+    padding: 100px 0;
+
+    @include max-width-768 {
+        padding: 50px 0;
+    }
+
+    &__title {
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 30px;
+
+        @include max-width-768 {
+            font-size: 22px;
+            line-height: 28px;
+        }
+
+        span {
+            display: block;
+            font-size: 76px;
+            line-height: 76px;
+            color: $red;
+            font-weight: 700;
+            margin-bottom: 30px;
+
+            @include max-width-768 {
+                font-size: 56px;
+                line-height: 56px;
+            }
+        }
+    }
+
+    &__button {
+        &:hover {
+            border-color: $red;
+            color: $black;
+        }
+    }
+}
