@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SlickSlider from 'react-slick';
 import { Link } from 'react-router-dom';
-import { getPageContentFailure, getProductsSuccess, startGettingPageContent } from '../../actions';
+import { getPageContentFailure, getPageContentSuccess, startGettingPageContent } from '../../actions';
 import api from '../../assets/js/api';
 import '../../../node_modules/slick-carousel/slick/slick.scss';
 import './Products-card.scss';
@@ -51,10 +51,10 @@ const sliderSettings = {
     nextArrow: <NextArrow />,
 };
 
-const mapStateToProps = ({ products }) => {
-    const { currentProductName } = products;
+const mapStateToProps = ({ innerContent }) => {
+    const { productCards } = innerContent;
 
-    if (!products[currentProductName]) {
+    if (!productCards) {
         return {
             hasContent: false,
         };
@@ -62,12 +62,12 @@ const mapStateToProps = ({ products }) => {
 
     return {
         hasContent: true,
-        product: products[currentProductName],
+        productCards,
     };
 };
 
 const ProductsCard = ({
-    match, hasContent, dispatch, product,
+    match, hasContent, dispatch, productCards,
 }) => {
     useEffect(() => {
         scrollPageTop();
@@ -77,36 +77,36 @@ const ProductsCard = ({
         }
 
         dispatch(startGettingPageContent());
-        const productCardId = match.params.id;
 
-        api.get(`./ProductCard-${productCardId}.json`)
+        api.get('./ProductCardsData.json')
             .then((response) => {
                 const { data } = response;
-                const productName = `productCard-${productCardId}`;
-                const products = {};
-                products[productName] = data;
-                const result = {
-                    products,
-                    currentProductName: productName,
-                };
-                dispatch(getProductsSuccess(result));
+                dispatch(getPageContentSuccess(data));
             })
             .catch((e) => {
                 dispatch(getPageContentFailure(e.message));
             });
     }, []);
+
+    const productCardName = match.params.id;
+    const currentContent = productCards[productCardName];
+
+    if (!currentContent) {
+        return null;
+    }
+
     return (
         <div className="page-wrapper product-card">
             <div className="container">
-                <div className="product-card__title title">{product.title}</div>
+                <div className="product-card__title title">{currentContent.title}</div>
                 <div className="product-card__content">
                     <div className="product-card__left">
                         <div className="product-card__content-title">Описание</div>
-                        <div className="product-card__desc" dangerouslySetInnerHTML={{ __html: product.description }} />
+                        <div className="product-card__desc" dangerouslySetInnerHTML={{ __html: currentContent.description }} />
                     </div>
                     <div className="product-card__right">
                         <SlickSlider className="product-card__slider" {...sliderSettings}>
-                            { product.images.big.map((item) => (
+                            { currentContent.images.big.map((item) => (
                                 <div key={`${item}-${Math.random()}`}>
                                     <img src={item} alt="картинка" />
                                 </div>
@@ -139,25 +139,18 @@ NextArrow.propTypes = {
 
 ProductsCard.defaultProps = {
     hasContent: false,
-    product: {
-        title: '',
-        description: '',
-        images: {
-            big: [],
-            small: [],
-        },
-    },
+    productCards: {},
 };
 
 ProductsCard.propTypes = {
     match: PropTypes.objectOf(PropTypes.any).isRequired,
     hasContent: PropTypes.bool,
     dispatch: PropTypes.func.isRequired,
-    product: PropTypes.shape({
+    productCards: PropTypes.objectOf(PropTypes.shape({
         title: PropTypes.string,
         description: PropTypes.string,
         images: PropTypes.objectOf(PropTypes.array),
-    }),
+    })),
 };
 
 export default connect(mapStateToProps)(ProductsCard);

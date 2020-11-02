@@ -5,51 +5,61 @@
       "byId": {
         "product1": {
           "id": 1,
+          "url": "stacionarnye-peregorodki",
           "title": "Стационарные перегородки",
           "img": "./img/products/product1.jpg"
         },
         "product2": {
           "id": 2,
+          "url": "steklyannye-peregorodki",
           "title": "Стеклянные перегородки",
           "img": "./img/products/product2.jpg"
         },
         "product3": {
           "id": 3,
+          "url": "ofisnye-peregorodki",
           "title": "Офисные перегородки",
           "img": "./img/products/product3.jpg"
         },
         "product4": {
           "id": 4,
+          "url": "oblicovka-sten",
           "title": "Облицовка стен",
           "img": "./img/products/product4.jpg"
         },
         "product5": {
           "id": 5,
+          "url": "besprofilnye-peregorodki",
           "title": "Беспрофильные перегородки",
           "img": "./img/products/product5.jpg"
         },
         "product6": {
           "id": 6,
+          "url": "dveri",
           "title": "Двери",
           "img": "./img/products/product6.jpg"
         },
         "product7": {
           "id": 7,
+          "url": "steklyannye-ograzhdeniya-i-kozyrki",
           "title": "Стеклянные ограждения и козырьки",
           "img": "./img/products/product7.jpg"
         },
         "product8": {
           "id": 8,
+          "url": "santekhnicheskie-i-dushevye-peregorodki",
           "title": "Сантехнические и душевые перегородки",
           "img": "./img/products/product8.jpg"
         },
         "product9": {
           "id": 9,
+          "url": "razdvizhnye-peregorodki",
           "title": "Раздвижные перегородки",
           "img": "./img/products/product9.jpg"
         },
         "product10": {
           "id": 10,
+          "url": "mobilnye-peregorodki",
           "title": "Мобильные перегородки",
           "img": "./img/products/product1.jpg"
         }

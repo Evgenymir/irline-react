@@ -7,7 +7,6 @@ import {
     getPageContentFailure,
     getPageContentSuccess,
     startGettingPageContent,
-    setCurrentProductIdCard,
 } from '../../actions';
 import api from '../../assets/js/api';
 import './Products.scss';
@@ -52,11 +51,6 @@ const Products = ({
             });
     }, []);
 
-    const setDataCurrentIdProduct = (id) => () => {
-        const normalizeId = `productCard-${id}`;
-        dispatch(setCurrentProductIdCard(normalizeId));
-    };
-
     return (
         <div className="page-wrapper product-page">
             <div className="container">
@@ -65,9 +59,8 @@ const Products = ({
                     { products.map((product) => (
                         <Link
                             key={product.id}
-                            to={(location) => ({ ...location, pathname: `${location.pathname}/${product.id}` })}
+                            to={(location) => ({ ...location, pathname: `${location.pathname}/${product.url}` })}
                             className="product-page__item"
-                            onClick={setDataCurrentIdProduct(product.id)}
                         >
                             <div className="product-page__item-title">
                                 {product.title}
@@ -98,6 +91,7 @@ Products.propTypes = {
     title: PropTypes.string,
     products: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
+        url: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         img: PropTypes.string.isRequired,
     })),

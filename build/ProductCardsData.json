@@ -1,0 +1,174 @@
+{
+  "productCards": {
+    "stacionarnye-peregorodki": {
+      "productUrl": "stacionarnye-peregorodki",
+      "title": "Стационарные перегородки",
+      "description": "Популярный вариант организации рабочих мест — установка стеклянных перегородок, стеклянные перегородки являются стационарными. Это позволяет экономить на освещении, облегчает контроль и охрану помещений, формирует стильную офисную эстетику. «Ирлайн» создает готовые решения для вашего офиса в разных вариантах.",
+      "images": {
+        "big": [
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide2.jpg",
+          "./img/productCardSlide3.jpg"
+        ],
+        "small": [
+          "./img/productCardSlideSmall1.jpg",
+          "./img/productCardSlideSmall2.jpg",
+          "./img/productCardSlideSmall3.jpg"
+        ]
+      }
+    },
+    "steklyannye-peregorodki": {
+      "productUrl": "steklyannye-peregorodki",
+      "title": "Стеклянные перегородки",
+      "description": "Тут описание стеклянных перегородок - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem ex harum in labore, molestias praesentium ratione sapiente similique sit suscipit vero. Alias aliquid animi commodi, cumque dolorem doloribus eos et eveniet exercitationem facilis fuga ipsa ipsum minus nisi pariatur, quas quis reiciendis repellendus saepe, sed tenetur voluptas voluptates.",
+      "images": {
+        "big": [
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg"
+        ],
+        "small": [
+          "./img/productCardSlideSmall1.jpg",
+          "./img/productCardSlideSmall2.jpg",
+          "./img/productCardSlideSmall3.jpg"
+        ]
+      }
+    },
+    "ofisnye-peregorodki": {
+      "productUrl": "ofisnye-peregorodki",
+      "title": "Офисные перегородки",
+      "description": "Тут описание офисных перегородок - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem ex harum in labore, molestias praesentium ratione sapiente similique sit suscipit vero. Alias aliquid animi commodi, cumque dolorem doloribus eos et eveniet exercitationem facilis fuga ipsa ipsum minus nisi pariatur, quas quis reiciendis repellendus saepe, sed tenetur voluptas voluptates.",
+      "images": {
+        "big": [
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg"
+        ],
+        "small": [
+          "./img/productCardSlideSmall1.jpg",
+          "./img/productCardSlideSmall2.jpg",
+          "./img/productCardSlideSmall3.jpg"
+        ]
+      }
+    },
+    "oblicovka-sten": {
+      "productUrl": "oblicovka-sten",
+      "title": "Облицовка стен",
+      "description": "Тут описание Облицовки стен - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem ex harum in labore, molestias praesentium ratione sapiente similique sit suscipit vero. Alias aliquid animi commodi, cumque dolorem doloribus eos et eveniet exercitationem facilis fuga ipsa ipsum minus nisi pariatur, quas quis reiciendis repellendus saepe, sed tenetur voluptas voluptates.",
+      "images": {
+        "big": [
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg"
+        ],
+        "small": [
+          "./img/productCardSlideSmall1.jpg",
+          "./img/productCardSlideSmall2.jpg",
+          "./img/productCardSlideSmall3.jpg"
+        ]
+      }
+    },
+    "besprofilnye-peregorodki": {
+      "productUrl": "besprofilnye-peregorodki",
+      "title": "Беспрофильные перегородки",
+      "description": "Тут описание беспрофильных перегородок - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem ex harum in labore, molestias praesentium ratione sapiente similique sit suscipit vero. Alias aliquid animi commodi, cumque dolorem doloribus eos et eveniet exercitationem facilis fuga ipsa ipsum minus nisi pariatur, quas quis reiciendis repellendus saepe, sed tenetur voluptas voluptates.",
+      "images": {
+        "big": [
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg"
+        ],
+        "small": [
+          "./img/productCardSlideSmall1.jpg",
+          "./img/productCardSlideSmall2.jpg",
+          "./img/productCardSlideSmall3.jpg"
+        ]
+      }
+    },
+    "dveri": {
+      "productUrl": "dveri",
+      "title": "Двери",
+      "description": "Тут описание дверей - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem ex harum in labore, molestias praesentium ratione sapiente similique sit suscipit vero. Alias aliquid animi commodi, cumque dolorem doloribus eos et eveniet exercitationem facilis fuga ipsa ipsum minus nisi pariatur, quas quis reiciendis repellendus saepe, sed tenetur voluptas voluptates.",
+      "images": {
+        "big": [
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg"
+        ],
+        "small": [
+          "./img/productCardSlideSmall1.jpg",
+          "./img/productCardSlideSmall2.jpg",
+          "./img/productCardSlideSmall3.jpg"
+        ]
+      }
+    },
+    "steklyannye-ograzhdeniya-i-kozyrki": {
+      "productUrl": "steklyannye-ograzhdeniya-i-kozyrki",
+      "title": "Стеклянные ограждения и козырьки",
+      "description": "Тут описание стеклянных ограждений и козырьков - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem ex harum in labore, molestias praesentium ratione sapiente similique sit suscipit vero. Alias aliquid animi commodi, cumque dolorem doloribus eos et eveniet exercitationem facilis fuga ipsa ipsum minus nisi pariatur, quas quis reiciendis repellendus saepe, sed tenetur voluptas voluptates.",
+      "images": {
+        "big": [
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg"
+        ],
+        "small": [
+          "./img/productCardSlideSmall1.jpg",
+          "./img/productCardSlideSmall2.jpg",
+          "./img/productCardSlideSmall3.jpg"
+        ]
+      }
+    },
+    "santekhnicheskie-i-dushevye-peregorodki": {
+      "productUrl": "santekhnicheskie-i-dushevye-peregorodki",
+      "title": "Сантехнические и душевые перегородки",
+      "description": "Тут описание сантехнических и душевых перегородок - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem ex harum in labore, molestias praesentium ratione sapiente similique sit suscipit vero. Alias aliquid animi commodi, cumque dolorem doloribus eos et eveniet exercitationem facilis fuga ipsa ipsum minus nisi pariatur, quas quis reiciendis repellendus saepe, sed tenetur voluptas voluptates.",
+      "images": {
+        "big": [
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg"
+        ],
+        "small": [
+          "./img/productCardSlideSmall1.jpg",
+          "./img/productCardSlideSmall2.jpg",
+          "./img/productCardSlideSmall3.jpg"
+        ]
+      }
+    },
+    "razdvizhnye-peregorodki": {
+      "productUrl": "razdvizhnye-peregorodki",
+      "title": "Раздвижные перегородки",
+      "description": "Тут описание раздвижных перегородок - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem ex harum in labore, molestias praesentium ratione sapiente similique sit suscipit vero. Alias aliquid animi commodi, cumque dolorem doloribus eos et eveniet exercitationem facilis fuga ipsa ipsum minus nisi pariatur, quas quis reiciendis repellendus saepe, sed tenetur voluptas voluptates.",
+      "images": {
+        "big": [
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg"
+        ],
+        "small": [
+          "./img/productCardSlideSmall1.jpg",
+          "./img/productCardSlideSmall2.jpg",
+          "./img/productCardSlideSmall3.jpg"
+        ]
+      }
+    },
+    "mobilnye-peregorodki": {
+      "productUrl": "mobilnye-peregorodki",
+      "title": "Мобильные перегородки",
+      "description": "Тут описание мобильных перегородок - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem ex harum in labore, molestias praesentium ratione sapiente similique sit suscipit vero. Alias aliquid animi commodi, cumque dolorem doloribus eos et eveniet exercitationem facilis fuga ipsa ipsum minus nisi pariatur, quas quis reiciendis repellendus saepe, sed tenetur voluptas voluptates.",
+      "images": {
+        "big": [
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg",
+          "./img/productCardSlide.jpg"
+        ],
+        "small": [
+          "./img/productCardSlideSmall1.jpg",
+          "./img/productCardSlideSmall2.jpg",
+          "./img/productCardSlideSmall3.jpg"
+        ]
+      }
+    }
+  }
+}

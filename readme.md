@@ -27,4 +27,4 @@
   [InitialData](https://evgenymir.github.io/irline-react/build/AppData.json)
   [AboutData](https://evgenymir.github.io/irline-react/build/AboutData.json)
   [ProductsData](https://evgenymir.github.io/irline-react/build/ProductsData.json)
-  [ProductCardData](https://evgenymir.github.io/irline-react/build/ProductCard-1.json)
+  [ProductCardsData](https://evgenymir.github.io/irline-react/build/ProductCardsData.json)

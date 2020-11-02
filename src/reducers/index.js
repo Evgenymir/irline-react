@@ -65,12 +65,6 @@ const loading = (state = initialState, action) => {
                 error: action.payload.error,
             };
         }
-        case 'GET_PRODUCTS_SUCCESS': {
-            return {
-                ...state,
-                isLoad: false,
-            };
-        }
         default: {
             return state;
         }
@@ -195,39 +189,12 @@ const innerContent = (state = {}, action) => {
     }
 };
 
-const products = (state = {}, action) => {
-    switch (action.type) {
-        case 'GET_PRODUCTS_SUCCESS': {
-            const { data } = action.payload;
-            const result = {
-                currentProductName: data.currentProductName,
-                ...data.products,
-            };
-            return {
-                ...state,
-                ...result,
-            };
-        }
-        case 'SET_CURRENT_PRODUCT_ID_CARD': {
-            const { id } = action.payload;
-            return {
-                ...state,
-                currentProductName: id,
-            };
-        }
-        default: {
-            return state;
-        }
-    }
-};
-
 const rootReducers = combineReducers({
     loading,
     initState,
     uiState,
     form: formReducer,
     innerContent,
-    products,
 });
 
 export default rootReducers;

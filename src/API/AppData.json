@@ -35,10 +35,6 @@
       "link": "/services"
     }, {
       "id": 4,
-      "title": "Проекты",
-      "link": "/projects"
-    }, {
-      "id": 5,
       "title": "Контакты",
       "link": "/contact"
     }
@@ -275,26 +271,26 @@
           "text": "Услуги",
           "link": "/services"
         }, {
-          "text": "Проекты",
-          "link": "/projects"
-        }, {
           "text": "Контакты",
           "link": "/contact"
         }
       ]
     },
     {
-      "title": "Назначение помещений",
+      "title": "Наша продукция",
       "items": [
         {
-          "text": "Коридорные зоны",
-          "link": "/corridor-zones"
+          "text": "Стационарные перегородки",
+          "link": "/products/stacionarnye-peregorodki"
         }, {
-          "text": "Холлы",
-          "link": "/halls"
+          "text": "Офисные перегородки",
+          "link": "/products/ofisnye-peregorodki"
+        }, {
+          "text": "Мобильные перегородки",
+          "link": "/products/mobilnye-peregorodki"
         }, {
           "text": "Прочее",
-          "link": "/other"
+          "link": "/products"
         }
       ]
     },
