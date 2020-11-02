@@ -1,0 +1,25 @@
+{
+  "servicesPage": {
+    "title": "Услуги",
+    "services": {
+      "byId": {
+        "service1": {
+          "image": "./img/service/serviceImg1.jpg",
+          "title": "С нами комфортно",
+          "description": "Просто расскажите нам о Ваших желаниях, мы разработаем проект и рабочую документацию"
+        },
+        "service2": {
+          "image": "./img/service/serviceImg2.jpg",
+          "title": "С нами креативно",
+          "description": "Мы знаем как воплотить в жизнь Ваши смелые оригинальные идеи"
+        },
+        "service3": {
+          "image": "./img/service/serviceImg3.jpg",
+          "title": "С нами практично",
+          "description": "Грамотные консультации наших специалистов позволят Вам избежать ненужных расходов"
+        }
+      },
+      "allIds": ["service1", "service2", "service3"]
+    }
+  }
+}
