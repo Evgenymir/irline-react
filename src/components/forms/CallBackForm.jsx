@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 import Button from '../button/Button.jsx';
 import maskPhone from '../../assets/js/maskPhone';
 import { required, phoneLength } from '../../assets/js/formValidate';
-import Input from '../formControls/Input.jsx';
+import CustomField from '../formControls/CustomField.jsx';
 import './Form.scss';
 
-const mapStateToProps = (state) => {
-    const form = state.form.callBackForm;
-    if (form === undefined) {
+const mapStateToProps = ({ form }) => {
+    const { callBackForm } = form;
+    if (callBackForm === undefined) {
         return {};
     }
-    const hasErrors = form.syncErrors;
+    const hasErrors = callBackForm.syncErrors;
 
     return {
         errors: hasErrors,
@@ -24,14 +24,14 @@ const CallBackForm = ({ handleSubmit, invalid }) => (
     <form onSubmit={handleSubmit} className="form">
         <Field
             name="name"
-            component={Input}
+            component={CustomField}
             type="text"
             validate={[required]}
             placeholder="ФИО"
         />
         <Field
             name="phone"
-            component={Input}
+            component={CustomField}
             type="tel"
             validate={[required, phoneLength]}
             placeholder="Телефон"

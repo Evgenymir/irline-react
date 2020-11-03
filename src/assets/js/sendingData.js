@@ -1,4 +1,4 @@
-const sendingData = ({ data }) => {
+const sendingData = (data) => {
     const normalizeData = JSON.stringify(data);
     const result = {
         data: normalizeData,

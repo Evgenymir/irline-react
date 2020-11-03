@@ -15,7 +15,7 @@ const mapStateToProps = ({ initState }) => {
     };
 };
 const Contacts = ({
-    map, address, email, phone, callBack,
+    map, address, email, phone, callBack, disabledCallBackButton,
 }) => (
     <section className="contacts-section">
         <Map data={map} />
@@ -26,7 +26,7 @@ const Contacts = ({
                 {email}
             </a>
             <a href={`tel:${phoneWithoutSpaces(phone)}`} className="contacts-section__phone">{phone}</a>
-            <Button link={callBack.link} text={callBack.name} additionalClasses="contacts-section__button" />
+            { disabledCallBackButton ? null : <Button link={callBack.link} text={callBack.name} additionalClasses="contacts-section__button" /> }
         </div>
     </section>
 );
@@ -40,6 +40,7 @@ Contacts.defaultProps = {
         name: 'Кнопка',
         link: 'callBack',
     },
+    disabledCallBackButton: false,
 };
 
 Contacts.propTypes = {
@@ -53,6 +54,7 @@ Contacts.propTypes = {
     email: PropTypes.string,
     phone: PropTypes.string,
     callBack: PropTypes.objectOf(PropTypes.string),
+    disabledCallBackButton: PropTypes.bool,
 };
 
 export default connect(mapStateToProps)(Contacts);

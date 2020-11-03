@@ -5,6 +5,7 @@ import './Services.scss';
 import StagesCooperation from '../section/stages-cooperation/Stages-cooperation.jsx';
 import { getPageContentFailure, getPageContentSuccess, startGettingPageContent } from '../../actions';
 import api from '../../assets/js/api';
+import scrollPageTop from '../../assets/js/scrollPageTop';
 
 const mapStateToProps = ({ innerContent }) => {
     const { servicesPage } = innerContent;
@@ -27,6 +28,8 @@ const Services = ({
     hasContent, dispatch, title, services,
 }) => {
     useEffect(() => {
+        scrollPageTop();
+
         if (hasContent) {
             return;
         }

@@ -3,10 +3,28 @@
 
 .contacts-section {
     position: relative;
+    min-height: 950px;
     @include flex();
+
+    @include max-width-1600 {
+        min-height: 800px;
+    }
+
+    @include max-width-1280 {
+        min-height: 600px;
+    }
+
+    @include max-width-992 {
+        min-height: 410px;
+    }
 
     @include max-width-768 {
         display: block;
+        min-height: 300px;
+    }
+
+    @include max-width-480 {
+        min-height: 200px;
     }
 
     &__content {

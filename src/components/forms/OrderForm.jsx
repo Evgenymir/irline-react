@@ -6,14 +6,14 @@ import Button from '../button/Button.jsx';
 import maskPhone from '../../assets/js/maskPhone';
 import { required, phoneLength, email } from '../../assets/js/formValidate';
 import './Form.scss';
-import Input from '../formControls/Input.jsx';
+import CustomField from '../formControls/CustomField.jsx';
 
-const mapStateToProps = (state) => {
-    const form = state.form.orderForm;
-    if (form === undefined) {
+const mapStateToProps = ({ form }) => {
+    const { orderForm } = form;
+    if (orderForm === undefined) {
         return {};
     }
-    const hasErrors = form.syncErrors;
+    const hasErrors = orderForm.syncErrors;
 
     return {
         errors: hasErrors,
@@ -24,14 +24,14 @@ const OrderForm = ({ handleSubmit, invalid }) => (
     <form onSubmit={handleSubmit} className="form">
         <Field
             name="name"
-            component={Input}
+            component={CustomField}
             type="text"
             validate={[required]}
             placeholder="ФИО"
         />
         <Field
             name="phone"
-            component={Input}
+            component={CustomField}
             type="tel"
             validate={[required, phoneLength]}
             placeholder="Телефон"
@@ -39,7 +39,7 @@ const OrderForm = ({ handleSubmit, invalid }) => (
         />
         <Field
             name="email"
-            component={Input}
+            component={CustomField}
             type="email"
             validate={[required, email]}
             placeholder="Email"

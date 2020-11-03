@@ -16,6 +16,77 @@
     }
 }
 
+.contact-form {
+    @include flex(space-between);
+    max-width: 1250px;
+    margin: 0 auto;
+
+    @include max-width-768 {
+        display: block;
+    }
+
+    .field__input {
+        border-radius: 0;
+    }
+
+    &__left {
+        width: 40%;
+
+        .field {
+            &:last-child {
+                margin-bottom: 0;
+
+                @include max-width-768 {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        @include max-width-768 {
+            width: 100%;
+        }
+    }
+
+    &__right {
+        width: 58%;
+
+        @include max-width-768 {
+            width: 100%;
+        }
+
+        .textarea-wrapper {
+            height: 100%;
+            margin-bottom: 0;
+        }
+    }
+
+    &__bottom {
+        width: 100%;
+        text-align: right;
+        padding-top: 40px;
+
+        @include max-width-768 {
+            padding-top: 30px;
+        }
+
+        @include max-width-768 {
+            text-align: center;
+        }
+    }
+
+    &__button {
+        background-color: $white;
+        border-color: $red;
+        color: $red;
+
+        &:hover {
+            border-color: $red;
+            background-color: $red;
+            color: $white;
+        }
+    }
+}
+
 .form-thanks {
     text-align: center;
 
