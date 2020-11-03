@@ -14,6 +14,7 @@ import ProductsPage from './pages/products/Products.jsx';
 import ProductsCard from './pages/products-card/Products-card.jsx';
 import ServicesPage from './pages/services/Services.jsx';
 import ContactPage from './pages/contact/Contact.jsx';
+import PrivacyPolicyPage from './pages/privacy-policy/Privacy-policy.jsx';
 import Page404 from './pages/404/404.jsx';
 
 const mapStateToProps = ({ loading, initState, uiState }) => {
@@ -55,6 +56,7 @@ const App = ({
                 <Route path="/products/:id" render={(props) => <ProductsCard {...props} />} />
                 <Route path="/services" render={(props) => <ServicesPage {...props} />} />
                 <Route path="/contact" render={(props) => <ContactPage {...props} />} />
+                <Route path="/privacy-policy" render={(props) => <PrivacyPolicyPage {...props} />} />
                 <Route render={() => <Page404 />} />
             </Switch>
             <Footer />
