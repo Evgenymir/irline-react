@@ -5,6 +5,8 @@ import ProductsPage from './pages/products/Products.jsx';
 import ProductsCard from './pages/products-card/Products-card.jsx';
 import ServicesPage from './pages/services/Services.jsx';
 import ContactPage from './pages/contact/Contact.jsx';
+import BusinessPage from './pages/business/Business.jsx';
+import ShoppingMall from './pages/shopping-mall/Shopping-mall.jsx';
 import PrivacyPolicyPage from './pages/privacy-policy/Privacy-policy.jsx';
 import Page404 from './pages/404/404.jsx';
 
@@ -34,6 +36,14 @@ const Router = [
         path: '/contact',
         name: 'contact',
         component: (props) => <ContactPage {...props} />,
+    }, {
+        path: '/business',
+        name: 'business',
+        component: (props) => <BusinessPage {...props} />,
+    }, {
+        path: '/shopping-mall',
+        name: 'shopping-mall',
+        component: (props) => <ShoppingMall {...props} />,
     }, {
         path: '/privacy-policy',
         name: 'privacy-policy',

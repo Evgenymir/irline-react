@@ -301,11 +301,8 @@
           "text": "Бизнес-центры",
           "link": "/business"
         }, {
-          "text": "Производства",
-          "link": "/production"
-        }, {
-          "text": "Другие проекты",
-          "link": "/other-projects"
+          "text": "Торговые центры",
+          "link": "/shopping-mall"
         }
       ]
     }
