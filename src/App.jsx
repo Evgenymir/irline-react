@@ -3,19 +3,12 @@ import './App.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Route, Switch, useLocation } from 'react-router-dom';
+import Router from './Router.jsx';
 import Preloader from './components/preloader/Preloader.jsx';
 import Header from './pages/header/Header.jsx';
 import Footer from './pages/footer/Footer.jsx';
 import Popup from './components/popup/Popup.jsx';
 import MobileMenu from './components/mobile-menu/Mobile-menu.jsx';
-import MainPage from './pages/main/Main.jsx';
-import AboutPage from './pages/about/About.jsx';
-import ProductsPage from './pages/products/Products.jsx';
-import ProductsCard from './pages/products-card/Products-card.jsx';
-import ServicesPage from './pages/services/Services.jsx';
-import ContactPage from './pages/contact/Contact.jsx';
-import PrivacyPolicyPage from './pages/privacy-policy/Privacy-policy.jsx';
-import Page404 from './pages/404/404.jsx';
 
 const mapStateToProps = ({ loading, initState, uiState }) => {
     const {
@@ -50,14 +43,9 @@ const App = ({
             <Preloader show={isLoadData} />
             <Header innerPage={location.pathname !== '/'} />
             <Switch location={location}>
-                <Route path="/" exact render={(props) => <MainPage {...props} />} />
-                <Route path="/about" render={(props) => <AboutPage {...props} />} />
-                <Route path="/products" exact render={(props) => <ProductsPage {...props} />} />
-                <Route path="/products/:id" render={(props) => <ProductsCard {...props} />} />
-                <Route path="/services" render={(props) => <ServicesPage {...props} />} />
-                <Route path="/contact" render={(props) => <ContactPage {...props} />} />
-                <Route path="/privacy-policy" render={(props) => <PrivacyPolicyPage {...props} />} />
-                <Route render={() => <Page404 />} />
+                { Router.map(({ path, name, component }) => (
+                    <Route path={path} exact render={(props) => component(props)} key={name} />
+                )) }
             </Switch>
             <Footer />
             { popup.isActive && <Popup formName={popup.nameForm} title={title} /> }
