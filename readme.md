@@ -7,7 +7,7 @@
 
 ## Используемые технологии
 ```
- React / Readux
+ React / Redux
  HTML5 / CSS3 / SCSS / BEM / Responsive Layout
  JavaScript
 ```
