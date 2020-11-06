@@ -1,7 +1,7 @@
 node_modules
-*.log*
 .idea
 irline-example/
 gulp/
 webpack.config.js
+webpack.config.prod.js
 gulpfile.js
